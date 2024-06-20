@@ -51,7 +51,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     private Mono<BigDecimal> fetchCurrentBalance(String userId){
-        return getByUserId(userId)
+        return repository.findFirstByOrderByDateTimeDesc(userId)
               .map(TransactionEntity::getBalance)
               .switchIfEmpty(Mono.just(BigDecimal.ZERO));
     }
