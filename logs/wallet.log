@@ -1434,3 +1434,224 @@ Original Stack Trace:
 2024-06-20T15:46:38.495-03:00  INFO [wallet,,] 14896 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: PURCHASE
 2024-06-20T15:46:38.496-03:00  INFO [wallet,,] 14896 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : calculateNewBalance - PurchaseStrategy
 2024-06-20T15:46:38.500-03:00  INFO [wallet,,] 14896 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: 0ff3d143-2686-4adb-bb2b-9127d379e415
+2024-06-20T15:52:45.460-03:00  INFO [wallet,,] 15744 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 15744 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T15:52:45.462-03:00  INFO [wallet,,] 15744 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T15:52:46.402-03:00  INFO [wallet,,] 15744 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T15:52:46.533-03:00  INFO [wallet,,] 15744 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 1 R2DBC repository interface.
+2024-06-20T15:52:47.805-03:00  WARN [wallet,,] 15744 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T15:52:48.081-03:00  INFO [wallet,,] 15744 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T15:52:49.323-03:00  INFO [wallet,,] 15744 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T15:52:49.345-03:00  INFO [wallet,,] 15744 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 4.37 seconds (process running for 4.931)
+2024-06-20T15:53:53.342-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T15:53:53.461-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T15:53:53.551-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: PURCHASE
+2024-06-20T15:53:53.551-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : calculateNewBalance - PurchaseStrategy
+2024-06-20T15:53:53.552-03:00 ERROR [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : Insufficient balance for Purchase
+2024-06-20T15:54:13.924-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T15:54:13.928-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T15:54:13.932-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: WITHDRAWAL
+2024-06-20T15:54:13.932-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.WithdrawalStrategy   : calculateNewBalance - WithdrawalStrategy
+2024-06-20T15:54:13.932-03:00 ERROR [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.WithdrawalStrategy   : Insufficient balance for withdrawal
+2024-06-20T15:54:22.617-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T15:54:22.621-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T15:54:22.627-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T15:54:22.627-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T15:54:22.675-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: 1843f2e6-0d93-4eda-b938-351c8b4e675d
+2024-06-20T15:54:30.852-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T15:54:30.855-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T15:54:30.860-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: WITHDRAWAL
+2024-06-20T15:54:30.860-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.WithdrawalStrategy   : calculateNewBalance - WithdrawalStrategy
+2024-06-20T15:54:30.864-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: 3c89bc6a-baf9-48fe-91b8-1888059c1d46
+2024-06-20T15:54:47.134-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T15:54:47.139-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T15:54:47.143-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: PURCHASE
+2024-06-20T15:54:47.143-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : calculateNewBalance - PurchaseStrategy
+2024-06-20T15:54:47.146-03:00  INFO [wallet,,] 15744 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: ca0b0840-0678-47cc-aefc-35e709237629
+2024-06-20T16:14:38.355-03:00  INFO [wallet,,] 5552 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 5552 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T16:14:38.359-03:00  INFO [wallet,,] 5552 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T16:14:39.437-03:00  INFO [wallet,,] 5552 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T16:14:39.572-03:00  INFO [wallet,,] 5552 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 1 R2DBC repository interface.
+2024-06-20T16:14:40.893-03:00  WARN [wallet,,] 5552 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T16:14:41.194-03:00  INFO [wallet,,] 5552 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T16:14:42.551-03:00  INFO [wallet,,] 5552 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T16:14:42.571-03:00  INFO [wallet,,] 5552 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 4.747 seconds (process running for 5.257)
+2024-06-20T16:14:50.859-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T16:14:50.932-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T16:14:51.026-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T16:14:51.027-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T16:14:51.074-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: 76bd215b-8845-4133-8cee-e97e4e7b60c5
+2024-06-20T16:14:54.279-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T16:14:54.283-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T16:14:54.288-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: PURCHASE
+2024-06-20T16:14:54.288-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : calculateNewBalance - PurchaseStrategy
+2024-06-20T16:14:54.293-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: 0d6ab6ed-4c6e-4f0a-8004-6c85be0ab6ce
+2024-06-20T16:14:58.699-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T16:14:58.703-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T16:14:58.709-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: PURCHASE
+2024-06-20T16:14:58.709-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : calculateNewBalance - PurchaseStrategy
+2024-06-20T16:14:58.713-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: f7539e98-9bd8-4e3c-a6d0-31810f922577
+2024-06-20T16:14:59.908-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T16:14:59.912-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T16:14:59.917-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: PURCHASE
+2024-06-20T16:14:59.918-03:00  INFO [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : calculateNewBalance - PurchaseStrategy
+2024-06-20T16:14:59.918-03:00 ERROR [wallet,,] 5552 --- [wallet] [reactor-tcp-nio-10] c.d.wallet.strategy.PurchaseStrategy     : Insufficient balance for Purchase
+2024-06-20T16:19:39.685-03:00  INFO [wallet,,] 1176 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 1176 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T16:19:39.688-03:00  INFO [wallet,,] 1176 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T16:19:40.729-03:00  INFO [wallet,,] 1176 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T16:19:40.864-03:00  INFO [wallet,,] 1176 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 1 R2DBC repository interface.
+2024-06-20T16:19:42.255-03:00  WARN [wallet,,] 1176 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T16:19:42.505-03:00  INFO [wallet,,] 1176 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T16:19:43.860-03:00  WARN [wallet,,] 1176 --- [wallet] [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'r2dbcScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/R2dbcInitializationConfiguration.class]: Failed to execute database script from resource [class path resource [schema.sql]]
+2024-06-20T16:19:43.902-03:00  INFO [wallet,,] 1176 --- [wallet] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-20T16:19:43.926-03:00 ERROR [wallet,,] 1176 --- [wallet] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'r2dbcScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/R2dbcInitializationConfiguration.class]: Failed to execute database script from resource [class path resource [schema.sql]]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
+	at com.dowglasmaia.wallet.WalletApplication.main(WalletApplication.java:12) ~[classes/:na]
+Caused by: org.springframework.r2dbc.connection.init.UncategorizedScriptException: Failed to execute database script from resource [class path resource [schema.sql]]
+	at org.springframework.r2dbc.connection.init.ScriptUtils.lambda$executeSqlScript$5(ScriptUtils.java:271) ~[spring-r2dbc-6.1.8.jar:6.1.8]
+	at reactor.core.publisher.Flux.lambda$onErrorMap$28(Flux.java:7302) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Flux.lambda$onErrorResume$29(Flux.java:7355) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drainAsync(FluxFlattenIterable.java:453) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drain(FluxFlattenIterable.java:724) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.request(FluxFlattenIterable.java:303) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerComplete(FluxConcatMapNoPrefetch.java:275) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onComplete(FluxConcatMap.java:889) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2231) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2098) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoStreamCollector$StreamCollectorSubscriber.onComplete(MonoStreamCollector.java:159) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:850) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:469) ~[reactor-core-3.6.6.jar:3.6.6]
+	at io.r2dbc.postgresql.util.FluxDiscardOnCancel$FluxDiscardOnCancelSubscriber.onComplete(FluxDiscardOnCancel.java:104) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:540) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:488) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:432) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onComplete(FluxWindowPredicate.java:312) ~[reactor-core-3.6.6.jar:3.6.6]
+	at io.r2dbc.postgresql.util.FluxDiscardOnCancel$FluxDiscardOnCancelSubscriber.onComplete(FluxDiscardOnCancel.java:104) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxCreate$BaseSink.complete(FluxCreate.java:465) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:871) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.complete(FluxCreate.java:819) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.drainLoop(FluxCreate.java:249) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.drain(FluxCreate.java:215) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.complete(FluxCreate.java:206) ~[reactor-core-3.6.6.jar:3.6.6]
+	at io.r2dbc.postgresql.client.ReactorNettyClient$Conversation.complete(ReactorNettyClient.java:668) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.emit(ReactorNettyClient.java:934) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:810) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:716) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:294) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:403) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:426) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.block(Mono.java:1779) ~[reactor-core-3.6.6.jar:3.6.6]
+		at org.springframework.boot.r2dbc.init.R2dbcScriptDatabaseInitializer.runScripts(R2dbcScriptDatabaseInitializer.java:68) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:98) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:76) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.8.jar:6.1.8]
+		at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.8.jar:6.1.8]
+		at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.8.jar:6.1.8]
+		at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
+		at com.dowglasmaia.wallet.WalletApplication.main(WalletApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: Sql cannot be parsed: unclosed quote (quote opened at index 3) in statement: DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'walletdb') THEN PERFORM dblink_exec('dbname=postgres', 'CREATE DATABASE walletDB')
+	at io.r2dbc.postgresql.PostgresqlSqlParser.getDollarQuoteToken(PostgresqlSqlParser.java:206) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.PostgresqlSqlParser.getParameterOrDollarQuoteToken(PostgresqlSqlParser.java:228) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.PostgresqlSqlParser.tokenize(PostgresqlSqlParser.java:139) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.PostgresqlSqlParser.parse(PostgresqlSqlParser.java:47) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.PostgresqlStatement.<init>(PostgresqlStatement.java:77) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.PostgresqlConnection.createStatement(PostgresqlConnection.java:257) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.postgresql.PostgresqlConnection.createStatement(PostgresqlConnection.java:65) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+	at io.r2dbc.pool.PooledConnection.createStatement(PooledConnection.java:135) ~[r2dbc-pool-1.0.1.RELEASE.jar:1.0.1.RELEASE]
+	at org.springframework.r2dbc.connection.init.ScriptUtils.runStatement(ScriptUtils.java:553) ~[spring-r2dbc-6.1.8.jar:6.1.8]
+	at org.springframework.r2dbc.connection.init.ScriptUtils.lambda$executeSqlScript$2(ScriptUtils.java:260) ~[spring-r2dbc-6.1.8.jar:6.1.8]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:183) ~[reactor-core-3.6.6.jar:3.6.6]
+	... 61 common frames omitted
+
+2024-06-20T16:21:56.293-03:00  INFO [wallet,,] 30984 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 30984 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T16:21:56.295-03:00  INFO [wallet,,] 30984 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T16:21:57.246-03:00  INFO [wallet,,] 30984 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T16:21:57.371-03:00  INFO [wallet,,] 30984 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 1 R2DBC repository interface.
+2024-06-20T16:21:58.516-03:00  WARN [wallet,,] 30984 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T16:21:58.765-03:00  INFO [wallet,,] 30984 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T16:21:59.481-03:00  INFO [wallet,,] 30984 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T16:21:59.495-03:00  INFO [wallet,,] 30984 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.697 seconds (process running for 4.162)
+2024-06-20T16:23:11.899-03:00  INFO [wallet,,] 11096 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 11096 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T16:23:11.902-03:00  INFO [wallet,,] 11096 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T16:23:12.905-03:00  INFO [wallet,,] 11096 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T16:23:13.024-03:00  INFO [wallet,,] 11096 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 1 R2DBC repository interface.
+2024-06-20T16:23:14.172-03:00  WARN [wallet,,] 11096 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T16:23:14.413-03:00  INFO [wallet,,] 11096 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T16:23:15.120-03:00  INFO [wallet,,] 11096 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T16:23:15.136-03:00  INFO [wallet,,] 11096 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.726 seconds (process running for 4.187)
+2024-06-20T16:23:33.027-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T16:23:33.435-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T16:23:33.679-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T16:23:33.680-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T16:23:33.732-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: e035c623-653d-433c-b701-f66cba77eac3

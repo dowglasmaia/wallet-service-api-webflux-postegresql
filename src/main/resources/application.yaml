@@ -6,11 +6,15 @@ spring:
     url: r2dbc:postgresql://localhost:5432/walletDB
     username: maia
     password: maiapw
+    pool:
+      max-size: 20  # Número máximo de conexões simultâneas
+      initial-size: 10  # Número inicial de conexões
+      max-idle-time: 30s  # Tempo máximo de ociosidade antes de uma conexão ser fechada
+      max-create-connection-time: 5s  # Tempo máximo para criar uma nova conexão
 
   sql:
     init:
       platform: postgresql
-      mode: always
       schema-locations: classpath:schema.sql
 
 
