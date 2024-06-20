@@ -16,6 +16,8 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Log4j2
 @RestController
@@ -47,12 +49,28 @@ public class TransactionController implements BaseController, WalletApi {
 
     @Override
     public Mono<ResponseEntity<BalanceResponse>> getBalance(String userId, ServerWebExchange exchange){
-        return null;
+        log.info("Start endpoint getBalance");
+        return transactionService.getBalanceByUserId(userId)
+              .map(response -> ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(TransactionMapper.toBalanceResponse(response)));
     }
 
 
     @Override
-    public Mono<ResponseEntity<StatementResponse>> getStatement(String userId, LocalDate startDate, LocalDate endDate, ServerWebExchange exchange){
-        return null;
+    public Mono<ResponseEntity<StatementResponse>> getStatement(
+          String userId,
+          LocalDate startDate,
+          LocalDate endDate,
+          ServerWebExchange exchange
+    ){
+        log.info("Start endpoint getStatement");
+        LocalDateTime startDateTime = startDate.atStartOfDay();
+        LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);
+
+        return transactionService.getStatementgetByUserId(userId, startDateTime, endDateTime)
+              .collectList()
+              .map(TransactionMapper::toStatementResponse)
+              .map(response -> ResponseEntity.status(HttpStatus.OK).body(response));
     }
 }

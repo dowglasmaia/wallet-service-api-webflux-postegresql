@@ -239,6 +239,10 @@ components:
         user_id:
           type: string
           example: "user123"
+        balance:
+          type: number
+          format: decimal
+          example: 2500.00
         transactions:
           type: array
           items:

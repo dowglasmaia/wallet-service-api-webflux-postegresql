@@ -9,9 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Log4j2
 @Service
@@ -46,12 +50,18 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Mono<TransactionEntity> getByUserId(String userId){
-        return repository.findByUserId(userId);
+    public Flux<TransactionEntity> getStatementgetByUserId(String userId, LocalDateTime startDate, LocalDateTime endDate){
+        return repository.findStatementByUserId(userId,startDate,endDate);
+    }
+
+
+    @Override
+    public Mono<TransactionEntity> getBalanceByUserId(String userId){
+        return repository.findFirstByOrderByDateTimeDesc(userId);
     }
 
     private Mono<BigDecimal> fetchCurrentBalance(String userId){
-        return repository.findFirstByOrderByDateTimeDesc(userId)
+        return this.getBalanceByUserId(userId)
               .map(TransactionEntity::getBalance)
               .switchIfEmpty(Mono.just(BigDecimal.ZERO));
     }

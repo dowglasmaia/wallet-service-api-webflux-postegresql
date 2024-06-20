@@ -1655,3 +1655,781 @@ Caused by: java.lang.IllegalArgumentException: Sql cannot be parsed: unclosed qu
 2024-06-20T16:23:33.679-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
 2024-06-20T16:23:33.680-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
 2024-06-20T16:23:33.732-03:00  INFO [wallet,,] 11096 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: e035c623-653d-433c-b701-f66cba77eac3
+2024-06-20T16:58:03.496-03:00  INFO [wallet,,] 4540 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 4540 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T16:58:03.499-03:00  INFO [wallet,,] 4540 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T16:58:04.541-03:00  INFO [wallet,,] 4540 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T16:58:04.682-03:00  INFO [wallet,,] 4540 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 1 R2DBC repository interface.
+2024-06-20T16:58:06.046-03:00  WARN [wallet,,] 4540 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T16:58:06.330-03:00  INFO [wallet,,] 4540 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T16:58:06.918-03:00  INFO [wallet,,] 4540 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T16:58:06.934-03:00  INFO [wallet,,] 4540 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 4.009 seconds (process running for 4.482)
+2024-06-20T17:00:01.125-03:00  INFO [wallet,,] 4540 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getBalance
+2024-06-20T17:00:47.039-03:00  INFO [wallet,,] 26348 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 26348 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T17:00:47.042-03:00  INFO [wallet,,] 26348 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T17:00:48.091-03:00  INFO [wallet,,] 26348 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T17:00:48.213-03:00  INFO [wallet,,] 26348 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 1 R2DBC repository interface.
+2024-06-20T17:00:49.492-03:00  WARN [wallet,,] 26348 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T17:00:49.745-03:00  INFO [wallet,,] 26348 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T17:00:50.439-03:00  INFO [wallet,,] 26348 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T17:00:50.461-03:00  INFO [wallet,,] 26348 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.87 seconds (process running for 4.253)
+2024-06-20T17:01:01.324-03:00  INFO [wallet,,] 26348 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getBalance
+2024-06-20T17:40:07.791-03:00  INFO [wallet,,] 22184 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 22184 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T17:40:07.931-03:00  INFO [wallet,,] 22184 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T17:40:08.932-03:00  INFO [wallet,,] 22184 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T17:40:09.082-03:00  INFO [wallet,,] 22184 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140 ms. Found 1 R2DBC repository interface.
+2024-06-20T17:40:10.450-03:00  WARN [wallet,,] 22184 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T17:40:10.693-03:00  INFO [wallet,,] 22184 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T17:40:11.349-03:00  INFO [wallet,,] 22184 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T17:40:11.362-03:00  INFO [wallet,,] 22184 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 4.118 seconds (process running for 4.617)
+2024-06-20T17:41:59.666-03:00  INFO [wallet,,] 22184 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T17:41:59.744-03:00 ERROR [wallet,,] 22184 --- [wallet] [reactor-http-nio-3] a.w.r.e.AbstractErrorWebExceptionHandler : [bbc491ce-1]  500 Server Error for HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20"
+
+org.springframework.dao.InvalidDataAccessApiUsageException: No parameter specified for [finalDate] in query [SELECT * FROM transactions WHERE user_id = :userId AND date_time BETWEEN :initialDate AND :finalDate ORDER BY date_time DESC]
+	at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler com.dowglasmaia.wallet.controller.TransactionController#getStatement(String, LocalDate, LocalDate, ServerWebExchange) [DispatcherHandler]
+	*__checkpoint ⇢ HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery$ExpandedQuery.<init>(StringBasedR2dbcQuery.java:194) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery.lambda$createQuery$0(StringBasedR2dbcQuery.java:152) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onComplete(FluxConcatMapNoPrefetch.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8840) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:202) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMapMany.subscribeOrReturn(MonoFlatMapMany.java:49) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8825) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxUsingWhen.subscribe(FluxUsingWhen.java:94) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.complete(MonoIgnoreThen.java:294) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onNext(MonoIgnoreThen.java:188) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.signal(MonoZip.java:297) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onNext(MonoZip.java:478) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onSubscribe(MonoZip.java:470) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onSubscribe(MonoPeekTerminal.java:152) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.request(MonoZip.java:220) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onSubscribe(MonoIgnoreThen.java:135) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:189) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:121) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerNext(FluxConcatMapNoPrefetch.java:259) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:865) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:171) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onSubscribe(MonoNext.java:70) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onSubscribe(FluxConcatMapNoPrefetch.java:164) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:1176) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:710) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:481) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:652) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:240) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-06-20T17:44:00.148-03:00  INFO [wallet,,] 24768 --- [wallet] [main] c.d.wallet.WalletApplicationTests        : Starting WalletApplicationTests using Java 17.0.8 with PID 24768 (started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T17:44:00.150-03:00  INFO [wallet,,] 24768 --- [wallet] [main] c.d.wallet.WalletApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T17:44:01.123-03:00  INFO [wallet,,] 24768 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T17:44:01.243-03:00  INFO [wallet,,] 24768 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 1 R2DBC repository interface.
+2024-06-20T17:44:02.445-03:00  WARN [wallet,,] 24768 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T17:44:02.685-03:00  INFO [wallet,,] 24768 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T17:44:03.103-03:00  INFO [wallet,,] 24768 --- [wallet] [main] c.d.wallet.WalletApplicationTests        : Started WalletApplicationTests in 3.267 seconds (process running for 4.192)
+2024-06-20T17:44:16.034-03:00  INFO [wallet,,] 3084 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 3084 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T17:44:16.038-03:00  INFO [wallet,,] 3084 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T17:44:17.074-03:00  INFO [wallet,,] 3084 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T17:44:17.198-03:00  INFO [wallet,,] 3084 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 1 R2DBC repository interface.
+2024-06-20T17:44:18.362-03:00  WARN [wallet,,] 3084 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T17:44:18.612-03:00  INFO [wallet,,] 3084 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T17:44:19.268-03:00  INFO [wallet,,] 3084 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T17:44:19.280-03:00  INFO [wallet,,] 3084 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.779 seconds (process running for 4.228)
+2024-06-20T17:44:28.212-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:44:28.613-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:44:28.758-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T17:44:28.758-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T17:44:28.847-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: db70c254-3fa4-4464-a2a5-10e4711bb768
+2024-06-20T17:44:30.622-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:44:30.700-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:44:30.730-03:00 ERROR [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-10] a.w.r.e.AbstractErrorWebExceptionHandler : [70ed2f54-2]  500 Server Error for HTTP POST "/api/v1/wallet/transaction?operationType=DEPOSIT"
+
+org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.time.LocalDateTime] to type [java.time.OffsetDateTime]
+	at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:294) ~[spring-core-6.1.8.jar:6.1.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler com.dowglasmaia.wallet.controller.TransactionController#createTransaction(String, Mono, ServerWebExchange) [DispatcherHandler]
+	*__checkpoint ⇢ HTTP POST "/api/v1/wallet/transaction?operationType=DEPOSIT" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:294) ~[spring-core-6.1.8.jar:6.1.8]
+		at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:185) ~[spring-core-6.1.8.jar:6.1.8]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.getPotentiallyConvertedSimpleRead(MappingRelationalConverter.java:673) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$DefaultConversionContext.convert(MappingRelationalConverter.java:864) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$ConversionContext.convert(MappingRelationalConverter.java:972) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$DocumentValueProvider.getPropertyValue(MappingRelationalConverter.java:1148) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$DocumentValueProvider.getPropertyValue(MappingRelationalConverter.java:1104) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.readProperties(MappingRelationalConverter.java:571) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.populateProperties(MappingRelationalConverter.java:538) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.read(MappingRelationalConverter.java:471) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.readAggregate(MappingRelationalConverter.java:364) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.readAggregate(MappingRelationalConverter.java:327) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.read(MappingRelationalConverter.java:314) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.project(MappingRelationalConverter.java:204) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.core.R2dbcEntityTemplate.lambda$getRowsFetchSpec$15(R2dbcEntityTemplate.java:840) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at io.r2dbc.postgresql.PostgresqlResult.lambda$map$2(PostgresqlResult.java:129) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:179) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:670) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:748) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:790) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:268) ~[reactor-core-3.6.6.jar:3.6.6]
+		at io.r2dbc.postgresql.util.FluxDiscardOnCancel$FluxDiscardOnCancelSubscriber.onNext(FluxDiscardOnCancel.java:91) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.6.6.jar:3.6.6]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$Conversation.emit(ReactorNettyClient.java:684) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.emit(ReactorNettyClient.java:936) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:810) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:716) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:294) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:403) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:426) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:455) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-06-20T17:44:31.485-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:44:31.489-03:00  INFO [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-10] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:44:31.498-03:00 ERROR [wallet,,] 3084 --- [wallet] [reactor-tcp-nio-10] a.w.r.e.AbstractErrorWebExceptionHandler : [70ed2f54-3]  500 Server Error for HTTP POST "/api/v1/wallet/transaction?operationType=DEPOSIT"
+
+org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.time.LocalDateTime] to type [java.time.OffsetDateTime]
+	at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:294) ~[spring-core-6.1.8.jar:6.1.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler com.dowglasmaia.wallet.controller.TransactionController#createTransaction(String, Mono, ServerWebExchange) [DispatcherHandler]
+	*__checkpoint ⇢ HTTP POST "/api/v1/wallet/transaction?operationType=DEPOSIT" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:294) ~[spring-core-6.1.8.jar:6.1.8]
+		at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:185) ~[spring-core-6.1.8.jar:6.1.8]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.getPotentiallyConvertedSimpleRead(MappingRelationalConverter.java:673) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$DefaultConversionContext.convert(MappingRelationalConverter.java:864) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$ConversionContext.convert(MappingRelationalConverter.java:972) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$DocumentValueProvider.getPropertyValue(MappingRelationalConverter.java:1148) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter$DocumentValueProvider.getPropertyValue(MappingRelationalConverter.java:1104) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.readProperties(MappingRelationalConverter.java:571) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.populateProperties(MappingRelationalConverter.java:538) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.read(MappingRelationalConverter.java:471) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.readAggregate(MappingRelationalConverter.java:364) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.readAggregate(MappingRelationalConverter.java:327) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.read(MappingRelationalConverter.java:314) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.relational.core.conversion.MappingRelationalConverter.project(MappingRelationalConverter.java:204) ~[spring-data-relational-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.core.R2dbcEntityTemplate.lambda$getRowsFetchSpec$15(R2dbcEntityTemplate.java:840) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at io.r2dbc.postgresql.PostgresqlResult.lambda$map$2(PostgresqlResult.java:129) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:179) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:670) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:748) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:790) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:268) ~[reactor-core-3.6.6.jar:3.6.6]
+		at io.r2dbc.postgresql.util.FluxDiscardOnCancel$FluxDiscardOnCancelSubscriber.onNext(FluxDiscardOnCancel.java:91) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.6.6.jar:3.6.6]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$Conversation.emit(ReactorNettyClient.java:684) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.emit(ReactorNettyClient.java:936) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:810) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:716) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:294) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:403) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:426) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:455) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-06-20T17:51:02.069-03:00  INFO [wallet,,] 11808 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 11808 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T17:51:02.073-03:00  INFO [wallet,,] 11808 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T17:51:03.094-03:00  INFO [wallet,,] 11808 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T17:51:03.419-03:00  INFO [wallet,,] 11808 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 1 R2DBC repository interface.
+2024-06-20T17:51:04.525-03:00  WARN [wallet,,] 11808 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T17:51:04.815-03:00  INFO [wallet,,] 11808 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T17:51:05.613-03:00  INFO [wallet,,] 11808 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T17:51:05.631-03:00  INFO [wallet,,] 11808 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 4.026 seconds (process running for 4.437)
+2024-06-20T17:51:28.710-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:51:29.119-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:51:29.316-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T17:51:29.316-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T17:51:29.383-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: d2afdb35-d23c-436e-bcfc-452b34db2567
+2024-06-20T17:51:30.994-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:51:30.997-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:51:31.009-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T17:51:31.009-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T17:51:31.014-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: ca34a585-6845-402b-9e70-b76d0ea18782
+2024-06-20T17:51:32.285-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:51:32.288-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:51:32.291-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T17:51:32.292-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T17:51:32.296-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: ec00e99c-436b-43e5-9d6e-f872c4d2f9f8
+2024-06-20T17:51:32.950-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:51:32.953-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:51:32.963-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: DEPOSIT
+2024-06-20T17:51:32.964-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.wallet.strategy.DepositStrategy      : calculateNewBalance - DepositStrategy
+2024-06-20T17:51:32.968-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-1] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: 3f8873cc-3faf-4940-9800-95c0b14361a2
+2024-06-20T17:52:17.314-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T17:52:17.342-03:00 ERROR [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] a.w.r.e.AbstractErrorWebExceptionHandler : [577e1417-5]  500 Server Error for HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20"
+
+org.springframework.dao.InvalidDataAccessApiUsageException: No parameter specified for [finalDate] in query [SELECT * FROM transactions WHERE user_id = :userId AND date_time BETWEEN :initialDate AND :finalDate ORDER BY date_time DESC]
+	at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler com.dowglasmaia.wallet.controller.TransactionController#getStatement(String, LocalDate, LocalDate, ServerWebExchange) [DispatcherHandler]
+	*__checkpoint ⇢ HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery$ExpandedQuery.<init>(StringBasedR2dbcQuery.java:194) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery.lambda$createQuery$0(StringBasedR2dbcQuery.java:152) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onComplete(FluxConcatMapNoPrefetch.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8840) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:202) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMapMany.subscribeOrReturn(MonoFlatMapMany.java:49) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8825) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxUsingWhen.subscribe(FluxUsingWhen.java:94) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.complete(MonoIgnoreThen.java:294) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onNext(MonoIgnoreThen.java:188) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.signal(MonoZip.java:297) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onNext(MonoZip.java:478) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onSubscribe(MonoZip.java:470) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onSubscribe(MonoPeekTerminal.java:152) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.request(MonoZip.java:220) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onSubscribe(MonoIgnoreThen.java:135) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:189) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:121) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerNext(FluxConcatMapNoPrefetch.java:259) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:865) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:171) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onSubscribe(MonoNext.java:70) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onSubscribe(FluxConcatMapNoPrefetch.java:164) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:1176) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:710) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:481) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:652) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:240) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-06-20T17:53:03.788-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:53:03.817-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-11] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:53:03.823-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-11] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: WITHDRAWAL
+2024-06-20T17:53:03.823-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-11] c.d.wallet.strategy.WithdrawalStrategy   : calculateNewBalance - WithdrawalStrategy
+2024-06-20T17:53:03.827-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-11] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: 047301da-a8f5-4cbc-8a74-4fb80bb4fc25
+2024-06-20T17:53:09.566-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint createTransaction
+2024-06-20T17:53:09.571-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-4] c.d.w.service.TransactionServiceImpl     : Starting create Transaction
+2024-06-20T17:53:09.581-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-4] c.d.wallet.strategy.TransactionContext   : Start Method executeStrategy with operationType: PURCHASE
+2024-06-20T17:53:09.582-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-4] c.d.wallet.strategy.PurchaseStrategy     : calculateNewBalance - PurchaseStrategy
+2024-06-20T17:53:09.587-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-tcp-nio-4] c.d.w.service.TransactionServiceImpl     : Successfully created Transaction with ID: ab9062b2-2704-4735-aa99-5df3c5627bd9
+2024-06-20T17:53:20.233-03:00  INFO [wallet,,] 11808 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getBalance
+2024-06-20T17:58:21.783-03:00  INFO [wallet,,] 8688 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 8688 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T17:58:21.786-03:00  INFO [wallet,,] 8688 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T17:58:22.805-03:00  INFO [wallet,,] 8688 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T17:58:22.924-03:00  INFO [wallet,,] 8688 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 1 R2DBC repository interface.
+2024-06-20T17:58:24.288-03:00  WARN [wallet,,] 8688 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T17:58:24.548-03:00  INFO [wallet,,] 8688 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T17:58:25.257-03:00  INFO [wallet,,] 8688 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T17:58:25.275-03:00  INFO [wallet,,] 8688 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.998 seconds (process running for 4.439)
+2024-06-20T17:58:31.329-03:00  INFO [wallet,,] 8688 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T17:58:31.371-03:00 ERROR [wallet,,] 8688 --- [wallet] [reactor-http-nio-3] a.w.r.e.AbstractErrorWebExceptionHandler : [74aee7eb-1]  500 Server Error for HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20"
+
+org.springframework.dao.InvalidDataAccessApiUsageException: No parameter specified for [finalDate] in query [SELECT * FROM transactions WHERE user_id = :userId AND date_time BETWEEN :initialDate AND :finalDate ORDER BY date_time DESC]
+	at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler com.dowglasmaia.wallet.controller.TransactionController#getStatement(String, LocalDate, LocalDate, ServerWebExchange) [DispatcherHandler]
+	*__checkpoint ⇢ HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery$ExpandedQuery.<init>(StringBasedR2dbcQuery.java:194) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery.lambda$createQuery$0(StringBasedR2dbcQuery.java:152) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onComplete(FluxConcatMapNoPrefetch.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8840) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:202) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMapMany.subscribeOrReturn(MonoFlatMapMany.java:49) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8825) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxUsingWhen.subscribe(FluxUsingWhen.java:94) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.complete(MonoIgnoreThen.java:294) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onNext(MonoIgnoreThen.java:188) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.signal(MonoZip.java:297) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onNext(MonoZip.java:478) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onSubscribe(MonoZip.java:470) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onSubscribe(MonoPeekTerminal.java:152) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.request(MonoZip.java:220) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onSubscribe(MonoIgnoreThen.java:135) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:189) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:121) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerNext(FluxConcatMapNoPrefetch.java:259) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:865) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:171) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onSubscribe(MonoNext.java:70) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onSubscribe(FluxConcatMapNoPrefetch.java:164) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:1176) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:710) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:481) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:652) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:240) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-06-20T17:59:53.154-03:00  INFO [wallet,,] 11340 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 11340 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T17:59:53.157-03:00  INFO [wallet,,] 11340 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T17:59:54.277-03:00  INFO [wallet,,] 11340 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T17:59:54.425-03:00  INFO [wallet,,] 11340 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 142 ms. Found 1 R2DBC repository interface.
+2024-06-20T17:59:55.863-03:00  WARN [wallet,,] 11340 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T17:59:56.233-03:00  INFO [wallet,,] 11340 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T17:59:57.046-03:00  INFO [wallet,,] 11340 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T17:59:57.066-03:00  INFO [wallet,,] 11340 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 4.493 seconds (process running for 5.428)
+2024-06-20T18:00:03.717-03:00  INFO [wallet,,] 11340 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T18:00:36.848-03:00 ERROR [wallet,,] 11340 --- [wallet] [reactor-http-nio-3] a.w.r.e.AbstractErrorWebExceptionHandler : [56ed4876-1]  500 Server Error for HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20"
+
+org.springframework.dao.InvalidDataAccessApiUsageException: No parameter specified for [finalDate] in query [SELECT * FROM transactions WHERE user_id = :userId AND date_time BETWEEN :initialDate AND :finalDate ORDER BY date_time DESC]
+	at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler com.dowglasmaia.wallet.controller.TransactionController#getStatement(String, LocalDate, LocalDate, ServerWebExchange) [DispatcherHandler]
+	*__checkpoint ⇢ HTTP GET "/api/v1/wallet/statement?user_id=user123&start_date=2024-06-19&end_date=2024-06-20" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at org.springframework.data.r2dbc.core.DefaultReactiveDataAccessStrategy.processNamedParameters(DefaultReactiveDataAccessStrategy.java:275) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery$ExpandedQuery.<init>(StringBasedR2dbcQuery.java:194) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at org.springframework.data.r2dbc.repository.query.StringBasedR2dbcQuery.lambda$createQuery$0(StringBasedR2dbcQuery.java:152) ~[spring-data-r2dbc-3.3.0.jar:3.3.0]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onComplete(FluxConcatMapNoPrefetch.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8840) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:202) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMapMany.subscribeOrReturn(MonoFlatMapMany.java:49) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8825) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxUsingWhen.subscribe(FluxUsingWhen.java:94) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.complete(MonoIgnoreThen.java:294) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onNext(MonoIgnoreThen.java:188) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.signal(MonoZip.java:297) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onNext(MonoZip.java:478) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipInner.onSubscribe(MonoZip.java:470) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onSubscribe(MonoPeekTerminal.java:152) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip$ZipCoordinator.request(MonoZip.java:220) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onSubscribe(MonoIgnoreThen.java:135) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:189) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoZip.subscribe(MonoZip.java:121) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerNext(FluxConcatMapNoPrefetch.java:259) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:865) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:171) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onSubscribe(MonoNext.java:70) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onSubscribe(FluxConcatMapNoPrefetch.java:164) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:1176) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:710) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:481) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:652) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:240) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-06-20T18:04:25.975-03:00  INFO [wallet,,] 8688 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 8688 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T18:04:25.978-03:00  INFO [wallet,,] 8688 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T18:04:26.965-03:00  INFO [wallet,,] 8688 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T18:04:27.086-03:00  INFO [wallet,,] 8688 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 1 R2DBC repository interface.
+2024-06-20T18:04:28.362-03:00  WARN [wallet,,] 8688 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T18:04:28.616-03:00  INFO [wallet,,] 8688 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T18:04:29.307-03:00  INFO [wallet,,] 8688 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T18:04:29.321-03:00  INFO [wallet,,] 8688 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.78 seconds (process running for 4.189)
+2024-06-20T18:04:42.715-03:00  INFO [wallet,,] 8688 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T18:12:09.037-03:00  INFO [wallet,,] 2852 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 2852 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T18:12:09.041-03:00  INFO [wallet,,] 2852 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T18:12:10.085-03:00  INFO [wallet,,] 2852 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T18:12:10.205-03:00  INFO [wallet,,] 2852 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 1 R2DBC repository interface.
+2024-06-20T18:12:11.345-03:00  WARN [wallet,,] 2852 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T18:12:11.587-03:00  INFO [wallet,,] 2852 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T18:12:12.102-03:00  INFO [wallet,,] 2852 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T18:12:12.118-03:00  INFO [wallet,,] 2852 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.521 seconds (process running for 3.956)
+2024-06-20T18:12:31.575-03:00  INFO [wallet,,] 2852 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T18:13:57.895-03:00  INFO [wallet,,] 2852 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T18:14:50.898-03:00  INFO [wallet,,] 2852 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T18:15:36.444-03:00  INFO [wallet,,] 2852 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T18:18:29.833-03:00  INFO [wallet,,] 27428 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 27428 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T18:18:29.836-03:00  INFO [wallet,,] 27428 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T18:18:30.835-03:00  INFO [wallet,,] 27428 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T18:18:30.950-03:00  INFO [wallet,,] 27428 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 1 R2DBC repository interface.
+2024-06-20T18:18:32.026-03:00  WARN [wallet,,] 27428 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T18:18:32.237-03:00  INFO [wallet,,] 27428 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T18:18:32.808-03:00  INFO [wallet,,] 27428 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T18:18:32.822-03:00  INFO [wallet,,] 27428 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.418 seconds (process running for 3.83)
+2024-06-20T18:18:40.811-03:00  INFO [wallet,,] 27428 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
+2024-06-20T18:19:11.050-03:00  INFO [wallet,,] 9916 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 9916 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-20T18:19:11.053-03:00  INFO [wallet,,] 9916 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-20T18:19:12.068-03:00  INFO [wallet,,] 9916 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-20T18:19:12.197-03:00  INFO [wallet,,] 9916 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 125 ms. Found 1 R2DBC repository interface.
+2024-06-20T18:19:13.425-03:00  WARN [wallet,,] 9916 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-20T18:19:13.741-03:00  INFO [wallet,,] 9916 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-20T18:19:14.541-03:00  INFO [wallet,,] 9916 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-20T18:19:14.560-03:00  INFO [wallet,,] 9916 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.944 seconds (process running for 4.338)
+2024-06-20T18:19:18.004-03:00  INFO [wallet,,] 9916 --- [wallet] [reactor-http-nio-3] c.d.w.controller.TransactionController   : Start endpoint getStatement
