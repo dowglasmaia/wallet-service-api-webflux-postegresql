@@ -6,7 +6,12 @@ spring:
     url: r2dbc:postgresql://localhost:5432/walletDB
     username: maia
     password: maiapw
-    #driver-class-name: org.postgresql.Driver
+
+  sql:
+    init:
+      platform: postgresql
+      mode: always
+      schema-locations: classpath:schema.sql
 
 
 logging:
