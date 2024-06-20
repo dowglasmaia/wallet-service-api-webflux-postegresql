@@ -1,0 +1,92 @@
+2024-06-19T17:26:21.340-03:00  INFO [wallet,,] 5044 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 5044 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-19T17:26:21.343-03:00  INFO [wallet,,] 5044 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-19T17:26:22.436-03:00  INFO [wallet,,] 5044 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-19T17:26:22.461-03:00  INFO [wallet,,] 5044 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 R2DBC repository interfaces.
+2024-06-19T17:26:23.394-03:00  WARN [wallet,,] 5044 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-19T17:26:23.573-03:00  WARN [wallet,,] 5044 --- [wallet] [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webHandler' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Error creating bean with name 'healthEndpointWebFluxHandlerMapping' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointReactiveWebExtensionConfiguration$WebFluxAdditionalHealthEndpointPathsConfiguration.class]: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.reactive.AdditionalHealthEndpointPathsWebFluxHandlerMapping]: Factory method 'healthEndpointWebFluxHandlerMapping' threw exception with message: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 0: Error creating bean with name 'healthContributorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthContributorRegistry' parameter 3: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.r2dbc.ConnectionFactoryHealthContributorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'connectionFactory' defined in class path resource [org/springframework/boot/autoconfigure/r2dbc/ConnectionFactoryConfigurations$PoolConfiguration$PooledConnectionFactoryConfiguration.class]: Failed to instantiate [io.r2dbc.pool.ConnectionPool]: Factory method 'connectionFactory' threw exception with message: Failed to determine a suitable R2DBC Connection URL
+2024-06-19T17:26:23.599-03:00  INFO [wallet,,] 5044 --- [wallet] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-19T17:26:23.621-03:00 ERROR [wallet,,] 5044 --- [wallet] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a ConnectionFactory: 'url' attribute is not specified and no embedded database could be configured.
+
+Reason: Failed to determine a suitable R2DBC Connection URL
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2024-06-19T17:33:24.803-03:00  INFO [wallet,,] 21092 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 21092 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-19T17:33:25.091-03:00  INFO [wallet,,] 21092 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-19T17:33:26.005-03:00  INFO [wallet,,] 21092 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-19T17:33:26.031-03:00  INFO [wallet,,] 21092 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 R2DBC repository interfaces.
+2024-06-19T17:33:26.883-03:00  WARN [wallet,,] 21092 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-19T17:33:27.041-03:00  WARN [wallet,,] 21092 --- [wallet] [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webHandler' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Error creating bean with name 'healthEndpointWebFluxHandlerMapping' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointReactiveWebExtensionConfiguration$WebFluxAdditionalHealthEndpointPathsConfiguration.class]: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.reactive.AdditionalHealthEndpointPathsWebFluxHandlerMapping]: Factory method 'healthEndpointWebFluxHandlerMapping' threw exception with message: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 0: Error creating bean with name 'healthContributorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthContributorRegistry' parameter 3: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.r2dbc.ConnectionFactoryHealthContributorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'connectionFactory' defined in class path resource [org/springframework/boot/autoconfigure/r2dbc/ConnectionFactoryConfigurations$PoolConfiguration$PooledConnectionFactoryConfiguration.class]: Failed to instantiate [io.r2dbc.pool.ConnectionPool]: Factory method 'connectionFactory' threw exception with message: Failed to determine a suitable R2DBC Connection URL
+2024-06-19T17:33:27.060-03:00  INFO [wallet,,] 21092 --- [wallet] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-19T17:33:27.078-03:00 ERROR [wallet,,] 21092 --- [wallet] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a ConnectionFactory: 'url' attribute is not specified and no embedded database could be configured.
+
+Reason: Failed to determine a suitable R2DBC Connection URL
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2024-06-19T17:35:25.560-03:00  INFO [wallet,,] 10512 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 10512 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-19T17:35:25.564-03:00  INFO [wallet,,] 10512 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-19T17:35:26.577-03:00  INFO [wallet,,] 10512 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-19T17:35:26.605-03:00  INFO [wallet,,] 10512 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 R2DBC repository interfaces.
+2024-06-19T17:35:27.414-03:00  WARN [wallet,,] 10512 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-19T17:35:27.605-03:00  WARN [wallet,,] 10512 --- [wallet] [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webHandler' defined in class path resource [org/springframework/boot/autoconfigure/web/reactive/WebFluxAutoConfiguration$EnableWebFluxConfiguration.class]: Error creating bean with name 'healthEndpointWebFluxHandlerMapping' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointReactiveWebExtensionConfiguration$WebFluxAdditionalHealthEndpointPathsConfiguration.class]: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.reactive.AdditionalHealthEndpointPathsWebFluxHandlerMapping]: Factory method 'healthEndpointWebFluxHandlerMapping' threw exception with message: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 0: Error creating bean with name 'healthContributorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthContributorRegistry' parameter 3: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.r2dbc.ConnectionFactoryHealthContributorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'connectionFactory' defined in class path resource [org/springframework/boot/autoconfigure/r2dbc/ConnectionFactoryConfigurations$PoolConfiguration$PooledConnectionFactoryConfiguration.class]: Failed to instantiate [io.r2dbc.pool.ConnectionPool]: Factory method 'connectionFactory' threw exception with message: Failed to determine a suitable R2DBC Connection URL
+2024-06-19T17:35:27.635-03:00  INFO [wallet,,] 10512 --- [wallet] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-19T17:35:27.653-03:00 ERROR [wallet,,] 10512 --- [wallet] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a ConnectionFactory: 'url' attribute is not specified and no embedded database could be configured.
+
+Reason: Failed to determine a suitable R2DBC Connection URL
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2024-06-19T17:36:07.085-03:00  INFO [wallet,,] 22116 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Starting WalletApplication using Java 17.0.8 with PID 22116 (D:\projetos\Desafios_2024\wallet\target\classes started by dowgl in D:\projetos\Desafios_2024\wallet)
+2024-06-19T17:36:07.088-03:00  INFO [wallet,,] 22116 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-19T17:36:08.134-03:00  INFO [wallet,,] 22116 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-19T17:36:08.160-03:00  INFO [wallet,,] 22116 --- [wallet] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 R2DBC repository interfaces.
+2024-06-19T17:36:08.961-03:00  WARN [wallet,,] 22116 --- [wallet] [main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2024-06-19T17:36:09.398-03:00  INFO [wallet,,] 22116 --- [wallet] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-19T17:36:10.367-03:00  INFO [wallet,,] 22116 --- [wallet] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2024-06-19T17:36:10.384-03:00  INFO [wallet,,] 22116 --- [wallet] [main] c.dowglasmaia.wallet.WalletApplication   : Started WalletApplication in 3.821 seconds (process running for 4.315)

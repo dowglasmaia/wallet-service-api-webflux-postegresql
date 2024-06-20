@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: wallet
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/walletDB
+    username: maia
+    password: maiapw
+    #driver-class-name: org.postgresql.Driver
+
+
+logging:
+  file:
+    name: logs/wallet.log
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+server:
+  port: 8001

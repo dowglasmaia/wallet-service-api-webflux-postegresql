@@ -1,0 +1,255 @@
+openapi: 3.0.3
+info:
+  title: "WalletService API"
+  description: "API to manage digital wallet operations: deposit, withdrawal, purchase, balance inquiry, and transaction statement."
+  version: 1.0.0
+servers:
+  - url: "https://localhost:8080/api/v1/"
+
+paths:
+  /wallet/transaction:
+    post:
+      tags:
+        - wallet
+      summary: Perform Wallet Operation
+      description: Endpoint to deposit, withdraw, or make a purchase using wallet funds.
+      operationId: createTransaction
+      parameters:
+        - name: operationType
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - DEPOSIT
+              - WITHDRAWAL
+              - PURCHASE
+          description: The type of operation to be performed.
+      requestBody:
+        description: Data for performing the operation.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionIdResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+
+  /wallet/balance:
+    get:
+      tags:
+        - wallet
+      summary: Check Balance
+      description: Endpoint to check the user's current balance.
+      operationId: getBalance
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "user123"
+          description: The ID of the user whose balance is being queried.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceResponse'
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+
+  /wallet/statement:
+    get:
+      tags:
+        - wallet
+      summary: Get Transaction Statement
+      description: Endpoint to get the user's transaction statement.
+      operationId: getStatement
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "user123"
+          description: The ID of the user whose statement is being queried.
+        - name: start_date
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+            example: "2024-01-01"
+          description: The start date of the statement period.
+        - name: end_date
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+            example: "2024-01-31"
+          description: The end date of the statement period.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatementResponse'
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+
+components:
+  schemas:
+    TransactionRequest:
+      type: object
+      required:
+        - user_id
+        - amount
+      properties:
+        user_id:
+          type: string
+          example: "user123"
+        amount:
+          type: number
+          format: decimal
+          example: 150.00
+
+    TransactionIdResponse:
+      type: object
+      properties:
+        transaction_id:
+          type: string
+          example: "txn789"
+
+    TransactionResponse:
+      type: object
+      properties:
+        transaction_id:
+          type: string
+          example: "txn789"
+        user_id:
+          type: string
+          example: "user123"
+        amount:
+          type: number
+          format: decimal
+          example: 150.00
+        date_time:
+          type: string
+          format: date-time
+          example: "2024-06-19T10:45:00Z"
+        operation_type:
+          type: string
+          enum:
+            - DEPOSIT
+            - WITHDRAWAL
+            - PURCHASE
+          example: "DEPOSIT"
+
+    BalanceResponse:
+      type: object
+      properties:
+        user_id:
+          type: string
+          example: "user123"
+        balance:
+          type: number
+          format: decimal
+          example: 500.00
+
+    StatementResponse:
+      type: object
+      properties:
+        user_id:
+          type: string
+          example: "user123"
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionResponse'
+
+    ResponseError:
+      type: object
+      properties:
+        code:
+          type: string
+          example: 'ERR001'
+        message:
+          type: string
+          example: 'Error description'
