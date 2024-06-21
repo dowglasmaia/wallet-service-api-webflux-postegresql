@@ -58,19 +58,14 @@ public class TransactionController implements BaseController, WalletApi {
 
 
     @Override
-    public Mono<ResponseEntity<StatementResponse>> getStatement(
-          String userId,
-          LocalDate startDate,
-          LocalDate endDate,
-          ServerWebExchange exchange
-    ){
+    public Mono<ResponseEntity<StatementResponse>> getStatement(String userId, LocalDate startDate, LocalDate endDate, ServerWebExchange exchange){
         log.info("Start endpoint getStatement");
         LocalDateTime startDateTime = startDate.atStartOfDay();
         LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);
 
         return transactionService.getStatementgetByUserId(userId, startDateTime, endDateTime)
               .collectList()
-              .map(TransactionMapper::toStatementResponse)
+              .flatMap(TransactionMapper::toStatementResponse)
               .map(response -> ResponseEntity.status(HttpStatus.OK).body(response));
     }
 }

@@ -1,4 +1,4 @@
-package com.dowglasmaia.wallet.entity;
+package com.dowglasmaia.wallet.enums;
 
 public enum TransactionTypeEnum {
     DEPOSIT,

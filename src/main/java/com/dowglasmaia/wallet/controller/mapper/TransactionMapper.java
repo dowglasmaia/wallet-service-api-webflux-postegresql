@@ -2,9 +2,10 @@ package com.dowglasmaia.wallet.controller.mapper;
 
 import br.com.dowglasmaia.openapi.model.*;
 import com.dowglasmaia.wallet.entity.TransactionEntity;
-import com.dowglasmaia.wallet.entity.TransactionTypeEnum;
+import com.dowglasmaia.wallet.enums.TransactionTypeEnum;
 import com.dowglasmaia.wallet.exeptions.BusinessException;
 import org.springframework.http.HttpStatus;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
@@ -13,7 +14,6 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TransactionMapper {
 
@@ -52,19 +52,33 @@ public class TransactionMapper {
 
     }
 
-    public static StatementResponse toStatementResponse(List<TransactionEntity> entities){
+    public static Mono<StatementResponse> toStatementResponse(List<TransactionEntity> entities){
         StatementResponse response = new StatementResponse();
 
-        List<TransactionResponse> transactions = entities.stream()
-              .map(TransactionMapper::toTransactionResponse)
-              .collect(Collectors.toList());
+        Flux<TransactionEntity> entityFlux = Flux.fromIterable(entities);
 
-        response.setTransactions(transactions);
-        response.setUserId(entities.isEmpty() ? null : entities.get(0).getUserId());
+        Flux<TransactionResponse> transactions = entityFlux.map(TransactionMapper::toTransactionResponse);
 
-        //impl saldo para o perido seleciona
+        // Filtra e agrega entradas e saídas
+        Mono<BigDecimal> inputs = entityFlux
+              .filter(entity -> entity.getOperationType().equals(TransactionTypeEnum.DEPOSIT.name()))
+              .map(TransactionEntity::getAmount)
+              .reduce(BigDecimal.ZERO, BigDecimal::add);
 
-        return response;
+        Mono<BigDecimal> outputs = entityFlux
+              .filter(entity -> !entity.getOperationType().equals(TransactionTypeEnum.DEPOSIT.name()))
+              .map(TransactionEntity::getAmount)
+              .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        // Calcula o saldo e monta a resposta
+        return inputs.zipWith(outputs, BigDecimal::subtract)
+              .flatMap(balance -> transactions.collectList()
+                    .map(transactionList -> {
+                        response.setTransactions(transactionList);
+                        response.setUserId(entities.isEmpty() ? null : entities.get(0).getUserId());
+                        response.setBalance(balance);
+                        return response;
+                    }));
     }
 
     private static TransactionResponse toTransactionResponse(TransactionEntity entity){
@@ -79,4 +93,5 @@ public class TransactionMapper {
         transactionResponse.setDateTime(offsetDateTime);
         return transactionResponse;
     }
+
 }
