@@ -12,9 +12,9 @@ LABEL MAINTAINER="DOWGLAS MAIA"
 ENV PORT=8001
 WORKDIR /usr/src/app
 RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-COPY --from=build /wallet/target/*.jar /usr/src/app/wallet-api.jar
+COPY --from=build /wallet/target/*.jar /usr/src/app/wallet-service-api.jar
 
-ENTRYPOINT ["java" , "-Dfile.encoding=UTF-8", "-jar", "/usr/src/app/wallet-api.jar", "--server.port=${PORT}"]
+ENTRYPOINT ["java" , "-Dfile.encoding=UTF-8", "-jar", "/usr/src/app/wallet-service-api.jar", "--server.port=${PORT}"]
 
 EXPOSE ${PORT}
 

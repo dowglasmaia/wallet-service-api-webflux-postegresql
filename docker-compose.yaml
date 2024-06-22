@@ -1,0 +1,64 @@
+version: '3'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    networks:
+      - broker-kafka
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    networks:
+      - broker-kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092" # Porta acessível do host
+      - "29092:29092" # Porta para comunicação interna entre contêineres
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092,PLAINTEXT_HOST://0.0.0.0:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    networks:
+      - broker-kafka
+    depends_on:
+      - kafka
+    ports:
+      - "19000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: kafka:29092
+
+  pg-db:
+    container_name: pg-db
+    image: postgres:14.12-alpine3.18
+    networks:
+      - maianet
+    environment:
+      - POSTGRES_USER=maia
+      - POSTGRES_PASSWORD=maiapw
+      - POSTGRES_DB=walletDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+
+networks:
+  maianet:
+  broker-kafka:
+    driver: bridge
+
+volumes:
+  postgresql:
+  postgresql_data:
+  prometheus_data:

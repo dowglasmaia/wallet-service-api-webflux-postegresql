@@ -1,6 +1,11 @@
 spring:
   application:
-    name: wallet
+    name: wallet-service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    admin:
+      client-id: admin
 
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/walletDB
@@ -23,7 +28,7 @@ spring:
 
 logging:
   file:
-    name: logs/wallet.log
+    name: logs/wallet-service.log
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
 

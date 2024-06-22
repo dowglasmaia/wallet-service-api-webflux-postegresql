@@ -13,9 +13,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 
 @Log4j2
 @Service
@@ -23,16 +21,22 @@ public class TransactionServiceImpl implements TransactionService {
 
     private final TransactionRepository repository;
     private final TransactionContext transactionContext;
+    private final AuditService auditService;
 
     @Autowired
-    public TransactionServiceImpl(TransactionRepository repository, TransactionContext transactionContext){
+    public TransactionServiceImpl(
+          TransactionRepository repository,
+          TransactionContext transactionContext,
+          AuditService auditService
+    ){
         this.repository = repository;
         this.transactionContext = transactionContext;
+        this.auditService = auditService;
     }
 
     @Transactional
     @Override
-    public Mono<TransactionEntity> create(TransactionEntity transaction){
+    public Mono<TransactionEntity> create(TransactionEntity transaction) {
         return fetchCurrentBalance(transaction.getUserId())
               .flatMap(currentBalance -> {
                   BigDecimal newBalance = transactionContext.executeStrategy(
@@ -42,7 +46,10 @@ public class TransactionServiceImpl implements TransactionService {
                   transaction.setBalance(newBalance);
 
                   return repository.save(transaction)
-                        .doOnSuccess(savedTransaction -> log.info("Successfully created Transaction with ID: {}", savedTransaction.getId()))
+                        .doOnSuccess(savedTransaction -> {
+                            log.info("Successfully created Transaction with ID: {}", savedTransaction.getId());
+                            auditService.sendMessage(savedTransaction); // Envio assíncrono da mensagem de auditoria
+                        })
                         .doOnError(error -> log.error("Failed to save Transaction: {}", error.getMessage()))
                         .onErrorResume(error -> Mono.error(new BusinessException("Failed to create Transaction", HttpStatus.UNPROCESSABLE_ENTITY)));
               })
@@ -51,7 +58,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Flux<TransactionEntity> getStatementgetByUserId(String userId, LocalDateTime startDate, LocalDateTime endDate){
-        return repository.findStatementByUserId(userId,startDate,endDate);
+        return repository.findStatementByUserId(userId, startDate, endDate);
     }
 
 
@@ -65,4 +72,5 @@ public class TransactionServiceImpl implements TransactionService {
               .map(TransactionEntity::getBalance)
               .switchIfEmpty(Mono.just(BigDecimal.ZERO));
     }
+
 }
