@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 
 @NoArgsConstructor
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 public class TransactionMessage implements Serializable {
 
     private String userId;
-    private String transactionId;
+    private UUID transactionId;
     private String operationType;
     private LocalDateTime dateTime;
 

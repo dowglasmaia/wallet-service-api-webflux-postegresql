@@ -174,8 +174,71 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseError'
 
+  /credit-adjustment/cancel:
+    patch:
+      tags:
+        - credit-adjustment
+      summary: Cancel a Transaction
+      description: Endpoint to cancel a transaction based on the transaction ID and user ID. This operation will invalidate the transaction and provide a cancellation reference.
+      operationId: cancelTransaction
+      requestBody:
+        description: Data required to cancel a transaction.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelTransactionRequest'
+      responses:
+        200:
+          description: Transaction Cancelled
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+
 components:
   schemas:
+    CancelTransactionRequest:
+      type: object
+      required:
+        - transaction_id
+        - user_id
+      properties:
+        transaction_id:
+          type: string
+          example: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+          description: "transactionID to be cancelled."
+        user_id:
+          type: string
+          example: "user123"
+          description: "ID of the user requesting the cancellation."
+
     TransactionRequest:
       type: object
       required:
@@ -216,10 +279,6 @@ components:
           example: "2024-06-19T10:45:00Z"
         operation_type:
           type: string
-          enum:
-            - DEPOSIT
-            - WITHDRAWAL
-            - PURCHASE
           example: "DEPOSIT"
 
     BalanceResponse:

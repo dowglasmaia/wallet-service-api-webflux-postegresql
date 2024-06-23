@@ -3,6 +3,7 @@ package com.dowglasmaia.wallet.strategy;
 import com.dowglasmaia.wallet.exeptions.BusinessException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -16,16 +17,19 @@ public class TransactionContext {
     private final TransactionStrategy depositStrategy;
     private final TransactionStrategy purchaseStrategy;
     private final TransactionStrategy withdrawalStrategy;
+    private final TransactionStrategy refundStrategy;
 
     @Autowired
     public TransactionContext(
-          TransactionStrategy depositStrategy,
-          TransactionStrategy purchaseStrategy,
-          TransactionStrategy withdrawalStrategy
+          @Qualifier("depositStrategy") TransactionStrategy depositStrategy,
+          @Qualifier("purchaseStrategy") TransactionStrategy purchaseStrategy,
+          @Qualifier("withdrawalStrategy") TransactionStrategy withdrawalStrategy,
+          @Qualifier("refundStrategy") TransactionStrategy refundStrategy
     ){
         this.depositStrategy = depositStrategy;
         this.purchaseStrategy = purchaseStrategy;
         this.withdrawalStrategy = withdrawalStrategy;
+        this.refundStrategy = refundStrategy;
     }
 
     public BigDecimal executeStrategy(String operationType, BigDecimal currentBalance, BigDecimal amount){
@@ -38,6 +42,8 @@ public class TransactionContext {
                 return purchaseStrategy.calculateNewBalance(currentBalance, amount);
             case "WITHDRAWAL":
                 return withdrawalStrategy.calculateNewBalance(currentBalance, amount);
+            case "REFUND":
+                return refundStrategy.calculateNewBalance(currentBalance, amount);
             default:
                 throw new BusinessException("Unsupported operation type", HttpStatus.UNPROCESSABLE_ENTITY);
         }

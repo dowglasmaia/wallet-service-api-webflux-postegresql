@@ -11,7 +11,7 @@ public interface TransactionService {
 
     Mono<TransactionEntity> create(TransactionEntity transaction);
 
-    Flux<TransactionEntity> getStatementgetByUserId(String userId, LocalDateTime startDate, LocalDateTime endDate);
+    Flux<TransactionEntity> getStatementByUserId(String userId, LocalDateTime startDate, LocalDateTime endDate);
 
     Mono<TransactionEntity> getBalanceByUserId(String userId);
 

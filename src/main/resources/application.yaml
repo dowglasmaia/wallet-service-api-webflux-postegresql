@@ -17,11 +17,6 @@ spring:
       max-idle-time: 30s  # Tempo máximo de ociosidade antes de uma conexão ser fechada
       max-create-connection-time: 5s  # Tempo máximo para criar uma nova conexão
 
-  sql:
-    init:
-      platform: postgresql
-      schema-locations: classpath:schema.sql
-
   jackson:
     default-property-inclusion: NON_NULL
 

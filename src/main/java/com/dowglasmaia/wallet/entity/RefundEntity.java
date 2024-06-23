@@ -16,8 +16,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table("transactions")
-public class TransactionEntity {
+@Table("refund")
+public class RefundEntity {
 
     @Id
     private UUID id;
@@ -25,13 +25,11 @@ public class TransactionEntity {
     @NotBlank
     private String userId;
 
-    private BigDecimal balance;
+    @NotBlank
+    private UUID transactionId;
 
     @NotBlank
     private BigDecimal amount;
-
-    @NotBlank
-    private String operationType;
 
     private LocalDateTime dateTime;
 }

@@ -1,8 +1,10 @@
-package com.dowglasmaia.wallet.service;
+package com.dowglasmaia.wallet.service.impl;
 
 import com.dowglasmaia.wallet.entity.TransactionEntity;
 import com.dowglasmaia.wallet.exeptions.BusinessException;
 import com.dowglasmaia.wallet.repository.TransactionRepository;
+import com.dowglasmaia.wallet.service.AuditService;
+import com.dowglasmaia.wallet.service.TransactionService;
 import com.dowglasmaia.wallet.strategy.TransactionContext;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,35 +38,41 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Transactional
     @Override
-    public Mono<TransactionEntity> create(TransactionEntity transaction) {
-        return fetchCurrentBalance(transaction.getUserId())
-              .flatMap(currentBalance -> {
-                  BigDecimal newBalance = transactionContext.executeStrategy(
-                        transaction.getOperationType(),
-                        currentBalance,
-                        transaction.getAmount());
+    public Mono<TransactionEntity> create(TransactionEntity transaction){
+        return fetchAndCalculateBalance(transaction.getUserId(), transaction.getOperationType(), transaction.getAmount())
+              .flatMap(newBalance -> {
                   transaction.setBalance(newBalance);
-
-                  return repository.save(transaction)
-                        .doOnSuccess(savedTransaction -> {
-                            log.info("Successfully created Transaction with ID: {}", savedTransaction.getId());
-                            auditService.sendMessage(savedTransaction); // Envio assíncrono da mensagem de auditoria
-                        })
-                        .doOnError(error -> log.error("Failed to save Transaction: {}", error.getMessage()))
-                        .onErrorResume(error -> Mono.error(new BusinessException("Failed to create Transaction", HttpStatus.UNPROCESSABLE_ENTITY)));
+                  return saveTransaction(transaction);
               })
               .doFirst(() -> log.info("Starting create Transaction"));
     }
 
     @Override
-    public Flux<TransactionEntity> getStatementgetByUserId(String userId, LocalDateTime startDate, LocalDateTime endDate){
+    public Flux<TransactionEntity> getStatementByUserId(String userId, LocalDateTime startDate, LocalDateTime endDate){
         return repository.findStatementByUserId(userId, startDate, endDate);
     }
-
 
     @Override
     public Mono<TransactionEntity> getBalanceByUserId(String userId){
         return repository.findFirstByOrderByDateTimeDesc(userId);
+    }
+
+    private Mono<TransactionEntity> saveTransaction(TransactionEntity transaction){
+        return repository.save(transaction)
+              .doOnSuccess(savedTransaction -> {
+                  log.info("Successfully created Transaction with ID: {}", savedTransaction.getId());
+                  auditService.sendMessage(savedTransaction); // Envio assíncrono da mensagem de auditoria
+              })
+              .doOnError(error -> {
+                  log.error("Failed to save Transaction: {}", error.getMessage());
+                  throw new BusinessException("Failed to create Transaction", HttpStatus.UNPROCESSABLE_ENTITY);
+              });
+    }
+
+    private Mono<BigDecimal> fetchAndCalculateBalance(String userId, String operationType, BigDecimal amount){
+        return fetchCurrentBalance(userId)
+              .map(currentBalance -> transactionContext.executeStrategy(operationType, currentBalance, amount))
+              .switchIfEmpty(Mono.just(BigDecimal.ZERO));
     }
 
     private Mono<BigDecimal> fetchCurrentBalance(String userId){
@@ -72,5 +80,4 @@ public class TransactionServiceImpl implements TransactionService {
               .map(TransactionEntity::getBalance)
               .switchIfEmpty(Mono.just(BigDecimal.ZERO));
     }
-
 }

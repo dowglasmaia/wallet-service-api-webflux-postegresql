@@ -63,7 +63,7 @@ public class TransactionController implements BaseController, WalletApi {
         LocalDateTime startDateTime = startDate.atStartOfDay();
         LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);
 
-        return transactionService.getStatementgetByUserId(userId, startDateTime, endDateTime)
+        return transactionService.getStatementByUserId(userId, startDateTime, endDateTime)
               .collectList()
               .flatMap(TransactionMapper::toStatementResponse)
               .map(response -> ResponseEntity.status(HttpStatus.OK).body(response));

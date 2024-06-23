@@ -87,9 +87,9 @@ public class TransactionMapper {
         OffsetDateTime offsetDateTime = entity.getDateTime().atOffset(zoneOffset);
 
         TransactionResponse transactionResponse = new TransactionResponse();
-        transactionResponse.setTransactionId(entity.getId());
+        transactionResponse.setTransactionId(entity.getId().toString());
         transactionResponse.setAmount(entity.getAmount());
-        transactionResponse.setOperationType(TransactionResponse.OperationTypeEnum.valueOf(entity.getOperationType()));
+        transactionResponse.setOperationType(entity.getOperationType());
         transactionResponse.setDateTime(offsetDateTime);
         return transactionResponse;
     }

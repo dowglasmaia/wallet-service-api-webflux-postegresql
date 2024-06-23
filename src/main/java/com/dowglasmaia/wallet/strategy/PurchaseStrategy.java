@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Log4j2
-@Component
+@Component("purchaseStrategy")
 public class PurchaseStrategy implements TransactionStrategy {
 
     @Override
