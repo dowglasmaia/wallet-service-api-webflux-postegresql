@@ -1,12 +1,12 @@
 package com.dowglasmaia.wallet.controller;
 
 import br.com.dowglasmaia.openapi.api.WalletApi;
-import br.com.dowglasmaia.openapi.model.BalanceResponse;
-import br.com.dowglasmaia.openapi.model.StatementResponse;
-import br.com.dowglasmaia.openapi.model.TransactionIdResponse;
-import br.com.dowglasmaia.openapi.model.TransactionRequest;
+import br.com.dowglasmaia.openapi.model.*;
 import com.dowglasmaia.wallet.controller.mapper.TransactionMapper;
-import com.dowglasmaia.wallet.service.TransactionService;
+import com.dowglasmaia.wallet.service.CreateTransactionService;
+import com.dowglasmaia.wallet.service.CreditAdjustmentTransactionService;
+import com.dowglasmaia.wallet.service.FindBalanceService;
+import com.dowglasmaia.wallet.service.TransactionsExtractService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,11 +24,31 @@ import java.time.LocalTime;
 public class TransactionController implements BaseController, WalletApi {
 
 
-    private final TransactionService transactionService;
+    private final CreateTransactionService createTransactionService;
+    private final CreditAdjustmentTransactionService adjustmentTransactionService;
+    private final FindBalanceService findBalanceService;
+    private final TransactionsExtractService transactionsExtractService;
 
     @Autowired
-    public TransactionController(TransactionService transactionService){
-        this.transactionService = transactionService;
+    public TransactionController(
+          CreateTransactionService createTransactionService,
+          CreditAdjustmentTransactionService adjustmentTransactionService,
+          FindBalanceService findBalanceService,
+          TransactionsExtractService transactionsExtractService
+    ){
+        this.createTransactionService = createTransactionService;
+        this.adjustmentTransactionService = adjustmentTransactionService;
+        this.findBalanceService = findBalanceService;
+        this.transactionsExtractService = transactionsExtractService;
+    }
+
+    @Override
+    public Mono<ResponseEntity<Void>> cancelTransaction(Mono<CancelTransactionRequest> cancelTransactionRequest, ServerWebExchange exchange){
+        log.info("Start endpoint cancelTransaction");
+
+        return cancelTransactionRequest
+              .flatMap(request -> adjustmentTransactionService.processCancellationAndRefund(request.getUserId(), request.getTransactionId()))
+              .then(Mono.just(ResponseEntity.noContent().build()));
     }
 
     @Override
@@ -40,7 +60,7 @@ public class TransactionController implements BaseController, WalletApi {
         log.info("Start endpoint createTransaction");
 
         return TransactionMapper.toTransactionEntity(transactionRequest, operationType)
-              .flatMap(transactionService::create)
+              .flatMap(createTransactionService::create)
               .map(TransactionMapper::toTransactionIdResponse)
               .map(response -> ResponseEntity
                     .status(HttpStatus.CREATED)
@@ -50,7 +70,7 @@ public class TransactionController implements BaseController, WalletApi {
     @Override
     public Mono<ResponseEntity<BalanceResponse>> getBalance(String userId, ServerWebExchange exchange){
         log.info("Start endpoint getBalance");
-        return transactionService.getBalanceByUserId(userId)
+        return findBalanceService.findByUserId(userId)
               .map(response -> ResponseEntity
                     .status(HttpStatus.OK)
                     .body(TransactionMapper.toBalanceResponse(response)));
@@ -63,7 +83,7 @@ public class TransactionController implements BaseController, WalletApi {
         LocalDateTime startDateTime = startDate.atStartOfDay();
         LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);
 
-        return transactionService.getStatementByUserId(userId, startDateTime, endDateTime)
+        return transactionsExtractService.findStatementByUserId(userId, startDateTime, endDateTime)
               .collectList()
               .flatMap(TransactionMapper::toStatementResponse)
               .map(response -> ResponseEntity.status(HttpStatus.OK).body(response));

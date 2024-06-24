@@ -20,6 +20,33 @@ spring:
   jackson:
     default-property-inclusion: NON_NULL
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    enable:
+      jvm: true
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: address-api
+    distribution:
+      slo:
+        http: '5ms,10ms,25ms,50ms,100ms,200ms,300ms,400ms,500ms,1s,2s'
+      percentiles-histogram:
+        http:
+          server:
+            requests: true
+
 
 logging:
   file:
@@ -29,3 +56,13 @@ logging:
 
 server:
   port: 8001
+
+info:
+  app:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+    encoding: '@project.build.sourceEncoding@'
+    java:
+      version: '@java.version@'
+

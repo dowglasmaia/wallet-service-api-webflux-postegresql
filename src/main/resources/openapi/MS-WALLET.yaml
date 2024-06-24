@@ -174,11 +174,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseError'
 
-  /credit-adjustment/cancel:
+  /wallet/credit-adjustment:
     patch:
       tags:
-        - credit-adjustment
-      summary: Cancel a Transaction
+        - wallet
+      summary: Cancel a Transaction and refund
       description: Endpoint to cancel a transaction based on the transaction ID and user ID. This operation will invalidate the transaction and provide a cancellation reference.
       operationId: cancelTransaction
       requestBody:

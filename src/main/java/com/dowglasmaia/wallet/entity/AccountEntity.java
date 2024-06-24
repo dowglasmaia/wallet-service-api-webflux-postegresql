@@ -1,6 +1,5 @@
 package com.dowglasmaia.wallet.entity;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,27 +8,19 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table("transaction")
-public class TransactionEntity {
+@Table("account")
+public class AccountEntity {
 
     @Id
     private UUID id;
-
-    @NotBlank
+    private String number;
     private String userId;
+    private BigDecimal balance;
 
-    @NotBlank
-    private BigDecimal amount;
-
-    @NotBlank
-    private String operationType;
-
-    private LocalDateTime dateTime;
 }

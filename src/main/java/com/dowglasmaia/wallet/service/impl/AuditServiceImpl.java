@@ -22,6 +22,7 @@ public class AuditServiceImpl implements AuditService {
 
     private final String TOPIC = "audit-transaction-topic";
 
+
     @Retryable(
           value = {DataAccessException.class},
           maxAttempts = 3,
@@ -39,8 +40,12 @@ public class AuditServiceImpl implements AuditService {
         try {
             jsonKafkaTemplate.send(TOPIC, transactionMessage);
 
+            log.info("### sendMessage successfully ###: {}", transactionMessage);
+        } catch (DataAccessException e) {
+            log.error("Error sendMessage message: {}", transactionMessage, e);
+            throw e; // rethrow to trigger retry
         } catch (Exception e) {
-            log.error("Unexpected error sending message: {}", transactionMessage, e);
+            log.error("Unexpected error processing send Message: {}", transactionMessage, e);
         }
     }
 

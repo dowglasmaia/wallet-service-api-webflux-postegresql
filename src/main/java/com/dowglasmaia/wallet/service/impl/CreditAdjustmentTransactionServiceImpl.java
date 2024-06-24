@@ -1,9 +1,11 @@
 package com.dowglasmaia.wallet.service.impl;
 
+import com.dowglasmaia.wallet.entity.AccountEntity;
 import com.dowglasmaia.wallet.entity.RefundEntity;
 import com.dowglasmaia.wallet.entity.TransactionEntity;
 import com.dowglasmaia.wallet.enums.TransactionTypeEnum;
 import com.dowglasmaia.wallet.exeptions.BusinessException;
+import com.dowglasmaia.wallet.repository.AccountRepository;
 import com.dowglasmaia.wallet.repository.RefundRepository;
 import com.dowglasmaia.wallet.repository.TransactionRepository;
 import com.dowglasmaia.wallet.service.AuditService;
@@ -24,6 +26,7 @@ import java.util.UUID;
 @Service
 public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentTransactionService {
 
+    private final AccountRepository accountRepository;
     private final TransactionRepository transactionRepository;
     private final RefundRepository refundRepository;
     private final TransactionContext transactionContext;
@@ -31,92 +34,104 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
 
     @Autowired
     public CreditAdjustmentTransactionServiceImpl(
-          TransactionRepository transactionRepository,
+          AccountRepository accountRepository,
           TransactionContext transactionContext,
           AuditService auditService,
-          RefundRepository refundRepository
+          RefundRepository refundRepository,
+          TransactionRepository transactionRepository
     ){
-        this.transactionRepository = transactionRepository;
+        this.accountRepository = accountRepository;
         this.transactionContext = transactionContext;
         this.auditService = auditService;
         this.refundRepository = refundRepository;
+        this.transactionRepository = transactionRepository;
     }
 
     @Transactional
+    @Override
     public Mono<Void> processCancellationAndRefund(String userId, String transactionId){
-        return findAndValidateTransaction(userId, transactionId)
+        return findTransactionByIdAndUser(userId, transactionId)
+              .flatMap(transaction ->
+                    accountRepository.findByUserId(userId)
+                          .switchIfEmpty(Mono.error(new BusinessException("Account not found", HttpStatus.NOT_FOUND)))
+                          .flatMap(account -> handleRefund(transaction, account))
+              )
               .doFirst(() -> log.info("Starting processCancellationAndRefund"))
-              .flatMap(this::processTransaction)
-              .flatMap(this::saveTransactionAndRefund)
               .doOnError(error -> log.error("Error processing cancellation and refund", error))
               .then();
     }
 
-    private Mono<TransactionEntity> findAndValidateTransaction(String userId, String transactionId){
+    private Mono<TransactionEntity> findTransactionByIdAndUser(String userId, String transactionId){
         return transactionRepository.findByIdAndUserId(UUID.fromString(transactionId), userId)
-              .doFirst(() -> log.info("Starting findAndValidateTransaction"))
               .switchIfEmpty(Mono.error(new BusinessException("Transaction not found", HttpStatus.NOT_FOUND)))
-              .flatMap(transaction -> validateOperationTypePurchase(transaction.getOperationType())
-                    .thenReturn(transaction))
-              .doOnSubscribe(subscription -> log.info("Starting Refund Transaction"));
+              .flatMap(this::validatePurchaseTransaction)
+              .doFirst(() -> log.info("Starting findTransactionByIdAndUser"))
+              .doOnSubscribe(subscription -> log.info("Validating Refund Transaction"));
     }
 
-    private Mono<TransactionEntity> processTransaction(TransactionEntity transaction){
-        log.info("Starting processTransaction");
-        transaction.setOperationType(TransactionTypeEnum.REFUND.name());
-        BigDecimal newBalance = transactionContext.executeStrategy(
-              transaction.getOperationType(),
-              transaction.getBalance(),
-              transaction.getAmount());
-        transaction.setBalance(newBalance);
+    private Mono<TransactionEntity> validatePurchaseTransaction(TransactionEntity transaction){
+        log.info("Starting validatePurchaseTransaction");
+        if (!"PURCHASE".equals(transaction.getOperationType())) {
+            log.error("Invalid operation for this operationType: {}", transaction.getOperationType());
+            return Mono.error(new BusinessException(
+                  String.format("Invalid operation for this operationType: %s", transaction.getOperationType()),
+                  HttpStatus.UNPROCESSABLE_ENTITY
+            ));
+        }
         return Mono.just(transaction);
     }
 
-    private Mono<Void> saveTransactionAndRefund(TransactionEntity transaction){
+    private Mono<Void> handleRefund(TransactionEntity transaction, AccountEntity account){
         return refundRepository.existsByTransactionIdAndUserId(transaction.getId(), transaction.getUserId())
-              .doFirst(() -> log.info("Starting saveTransactionAndRefund"))
               .flatMap(exists -> {
                   if (exists) {
                       String errorMessage = "Operation not performed; it has already been processed for this transaction";
                       log.error(errorMessage);
                       return Mono.error(new BusinessException(errorMessage, HttpStatus.UNPROCESSABLE_ENTITY));
                   } else {
-                      return transactionRepository.save(getTransactionEntity(transaction))
-                            .flatMap(savedTransaction -> refundRepository.save(getRefundEntity(transaction)))
-                            .doOnSuccess(success -> auditService.sendMessage(transaction))
-                            .then();
+                      return performRefund(transaction, account);
                   }
-              });
+              })
+              .doFirst(() -> log.info("Starting handleRefund"));
     }
 
+    private Mono<Void> performRefund(TransactionEntity transaction, AccountEntity account){
+        return Mono.defer(() -> {
+            TransactionEntity refundTransaction = createRefundTransaction(transaction);
+            BigDecimal newBalance = transactionContext.executeStrategy(
+                  refundTransaction.getOperationType(),
+                  account.getBalance(),
+                  refundTransaction.getAmount()
+            );
 
-    private Mono<Void> validateOperationTypePurchase(String operationType){
-        log.info("Starting validateOperationTypePurchase");
-        if (!"PURCHASE".equals(operationType)) {
-            log.error("Invalid operation for this operationType: {}", operationType);
-            return Mono.error(new BusinessException(
-                  String.format("Invalid operation for this operationType: %s", operationType),
-                  HttpStatus.UNPROCESSABLE_ENTITY));
-        }
-        return Mono.empty();
+            account.setBalance(newBalance);
+
+            return Mono.when(
+                  transactionRepository.save(refundTransaction),
+                  accountRepository.save(account),
+                  refundRepository.save(createRefundEntity(transaction))
+            ).doOnSuccess(unused -> auditService.sendMessage(refundTransaction));
+        });
     }
 
-    private static TransactionEntity getTransactionEntity(TransactionEntity transaction){
+    private TransactionEntity createRefundTransaction(TransactionEntity transaction){
+        log.info("Creating refund transaction");
         return TransactionEntity.builder()
-              .operationType(transaction.getOperationType())
-              .amount(transaction.getAmount())
-              .balance(transaction.getBalance())
               .userId(transaction.getUserId())
+              .operationType(TransactionTypeEnum.REFUND.name())
+              .amount(transaction.getAmount())
               .dateTime(LocalDateTime.now())
               .build();
     }
 
-    private static RefundEntity getRefundEntity(TransactionEntity transaction){
+    private RefundEntity createRefundEntity(TransactionEntity refundTransaction){
+        log.info("Creating refund entity");
         return RefundEntity.builder()
-              .transactionId(transaction.getId())
-              .userId(transaction.getUserId())
-              .amount(transaction.getAmount())
+              .transactionId(refundTransaction.getId())
+              .userId(refundTransaction.getUserId())
+              .amount(refundTransaction.getAmount())
               .dateTime(LocalDateTime.now())
               .build();
     }
+
 }
