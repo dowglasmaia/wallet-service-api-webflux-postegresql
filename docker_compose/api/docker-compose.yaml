@@ -1,5 +1,27 @@
 version: '3'
 services:
+  api-wallet:
+    image: dowglasmaia/wallet-service-api:v2
+    container_name: wallet-service-api
+    ports:
+      - "8001:8001"
+    networks:
+      - maianet
+      - broker-kafka
+
+
+  audit-service-api:
+    image: dowglasmaia/audit-service-api:v3
+    container_name: audit-service-api
+    networks:
+      - maianet
+      - broker-kafka
+    ports:
+      - "8002:8002"
+    depends_on:
+      - kafka
+      - mongo
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     networks:
@@ -15,8 +37,8 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - "9092:9092" # Porta acessível do host
-      - "29092:29092" # Porta para comunicação interna entre contêineres
+      - "9092:9092"  # Porta acessível do host
+      - "29092:29092"  # Porta para comunicação interna entre contêineres
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -52,13 +74,37 @@ services:
     volumes:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: false
+    volumes:
+      - mongo_data:/data/db
+
 
 networks:
   maianet:
   broker-kafka:
     driver: bridge
 
+
 volumes:
   postgresql:
   postgresql_data:
   prometheus_data:
+  mongo_data:

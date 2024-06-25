@@ -3,12 +3,12 @@ spring:
     name: wallet-service
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka:29092
     admin:
       client-id: admin
 
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/walletDB
+    url: r2dbc:postgresql://pg-db:5432/walletDB
     username: maia
     password: maiapw
     pool:
@@ -38,7 +38,7 @@ management:
       prometheus:
         enabled: true
     tags:
-      application: address-api
+      application: wallet-service
     distribution:
       slo:
         http: '5ms,10ms,25ms,50ms,100ms,200ms,300ms,400ms,500ms,1s,2s'

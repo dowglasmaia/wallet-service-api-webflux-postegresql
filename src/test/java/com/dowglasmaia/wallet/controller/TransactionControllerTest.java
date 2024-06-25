@@ -9,7 +9,6 @@ import com.dowglasmaia.wallet.service.TransactionsExtractService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
@@ -48,7 +47,7 @@ public class TransactionControllerTest {
 
     @Test
     @DisplayName("Should perform POST /transaction?operationType=DEPOSIT")
-    void shouldCreateTransactionSuccessfully() {
+    void shouldCreateTransactionSuccessfully(){
         var responseMock = toAccountEntityMock();
         String queryParam = "DEPOSIT";
 
@@ -57,7 +56,7 @@ public class TransactionControllerTest {
 
 
         WebTestClient.ResponseSpec response = webTestClient.post()
-              .uri(uriBuilder -> uriBuilder.path(BASE_PATH +"/transaction")
+              .uri(uriBuilder -> uriBuilder.path(BASE_PATH + "/transaction")
                     .queryParam("operationType", queryParam)
                     .build())
               .bodyValue(toTransactionRequestMock())
@@ -71,14 +70,14 @@ public class TransactionControllerTest {
 
     @Test
     @DisplayName("Should handle exception during transaction creation")
-    void shouldHandleExceptionDuringTransactionCreation() {
+    void shouldHandleExceptionDuringTransactionCreation(){
 
         String queryParam = "SALE";
         when(createTransactionService.create(any()))
               .thenReturn(Mono.error(new BusinessException("Invalid operation type: " + queryParam, HttpStatus.BAD_REQUEST)));
 
         WebTestClient.ResponseSpec response = webTestClient.post()
-              .uri(uriBuilder -> uriBuilder.path(BASE_PATH +"/transaction")
+              .uri(uriBuilder -> uriBuilder.path(BASE_PATH + "/transaction")
                     .queryParam("operationType", queryParam)
                     .build())
               .bodyValue(MockBuilder.toTransactionRequestMock())
@@ -90,7 +89,7 @@ public class TransactionControllerTest {
 
     @Test
     @DisplayName("Should perform GET /balance/{userId} and return balance successfully")
-    void shouldGetBalanceSuccessfully() {
+    void shouldGetBalanceSuccessfully(){
         var accountMock = MockBuilder.toAccountEntityMock();
         String queryParam = accountMock.getUserId();
 
@@ -98,7 +97,7 @@ public class TransactionControllerTest {
               .thenReturn(Mono.just(accountMock));
 
         WebTestClient.ResponseSpec response = webTestClient.get()
-              .uri(uriBuilder -> uriBuilder.path(BASE_PATH +"/balance")
+              .uri(uriBuilder -> uriBuilder.path(BASE_PATH + "/balance")
                     .queryParam("user_id", queryParam)
                     .build())
 

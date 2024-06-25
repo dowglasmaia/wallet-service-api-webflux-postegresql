@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "330e256f-c31a-43c7-b4da-5a650b683131",
+		"name": "Wallet - Transaction - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5139994"
+	},
+	"item": [
+		{
+			"name": "DEPOSIT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJuLTJtdEZ1LXZpeHRoTEt3ZFlRUWdfUW53N0RYU1lTMUkway0wSEtYVFdVIn0.eyJleHAiOjE3MTc0NDAwNDcsImlhdCI6MTcxNzQzOTc0NywianRpIjoiY2RiYzdmNmQtNTZiMy00MWU3LTg5NTgtZjA4OGJkNWRkNjk5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0tFQUxNX1NQUklOR19BUEkiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjIyMTAzNzctNWI4Yy00MzZhLTg4MDEtYjk0MDk4Yjk2MWJjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQ0xJRU5UX1NQUklORyIsInNlc3Npb25fc3RhdGUiOiIxMWViZmNjMi0yN2JlLTQ5OWQtYjlhNi1iOTdhMDRhODVmYzciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiQURNSU5fUkVBRCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZWFsbV9zcHJpbmdfYXBpIiwiQURNSU5fV1JJVEUiXX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjExZWJmY2MyLTI3YmUtNDk5ZC1iOWE2LWI5N2EwNGE4NWZjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiRG93Z2xhcyBNYWlhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZG93Z2xhcyIsImdpdmVuX25hbWUiOiJEb3dnbGFzIiwiZmFtaWx5X25hbWUiOiJNYWlhIiwiZW1haWwiOiJkb3dnbGFzbWFpYUBtYWlhLmNvbSJ9.Sfi-8kg9exqwTFGXcmGwtev7pVK_84C9dSwuGlzxtwtqBL5Gdeg8Bdyws6t1TpsXx_3MG_KULOJ4U74N61KLY6eHouWHemALFX7tEBtKSfzgVjZ72_NRox3DUaxNM1nDk9Ho_Onfil9xBgyCAgwtCV7nLeBPOia00J3_uOwf-YgCds30GA2AbPdoUkyH0FPrSd5wm2EztGwguV3pdkAkw5wqsIZ68yDyxDForMMtdMz1l6sNpeBZcwHGkzeToYNHW95ZqTTEWohPZBc4zl9TqF74MW-OccRpheg70UNKeSsb-6kMdUgqtTXYnCuIMy9AkzYGB2CU9ME0TvEGMmkhjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": \"user123\",\r\n  \"amount\": 1000.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/v1/wallet/transaction?operationType=DEPOSIT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"transaction"
+					],
+					"query": [
+						{
+							"key": "operationType",
+							"value": "DEPOSIT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WITHDRAWAL",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJuLTJtdEZ1LXZpeHRoTEt3ZFlRUWdfUW53N0RYU1lTMUkway0wSEtYVFdVIn0.eyJleHAiOjE3MTc0NDAwNDcsImlhdCI6MTcxNzQzOTc0NywianRpIjoiY2RiYzdmNmQtNTZiMy00MWU3LTg5NTgtZjA4OGJkNWRkNjk5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0tFQUxNX1NQUklOR19BUEkiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjIyMTAzNzctNWI4Yy00MzZhLTg4MDEtYjk0MDk4Yjk2MWJjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQ0xJRU5UX1NQUklORyIsInNlc3Npb25fc3RhdGUiOiIxMWViZmNjMi0yN2JlLTQ5OWQtYjlhNi1iOTdhMDRhODVmYzciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiQURNSU5fUkVBRCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZWFsbV9zcHJpbmdfYXBpIiwiQURNSU5fV1JJVEUiXX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjExZWJmY2MyLTI3YmUtNDk5ZC1iOWE2LWI5N2EwNGE4NWZjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiRG93Z2xhcyBNYWlhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZG93Z2xhcyIsImdpdmVuX25hbWUiOiJEb3dnbGFzIiwiZmFtaWx5X25hbWUiOiJNYWlhIiwiZW1haWwiOiJkb3dnbGFzbWFpYUBtYWlhLmNvbSJ9.Sfi-8kg9exqwTFGXcmGwtev7pVK_84C9dSwuGlzxtwtqBL5Gdeg8Bdyws6t1TpsXx_3MG_KULOJ4U74N61KLY6eHouWHemALFX7tEBtKSfzgVjZ72_NRox3DUaxNM1nDk9Ho_Onfil9xBgyCAgwtCV7nLeBPOia00J3_uOwf-YgCds30GA2AbPdoUkyH0FPrSd5wm2EztGwguV3pdkAkw5wqsIZ68yDyxDForMMtdMz1l6sNpeBZcwHGkzeToYNHW95ZqTTEWohPZBc4zl9TqF74MW-OccRpheg70UNKeSsb-6kMdUgqtTXYnCuIMy9AkzYGB2CU9ME0TvEGMmkhjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": \"user123\",\r\n  \"amount\": 1000.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/v1/wallet/transaction?operationType=WITHDRAWAL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"transaction"
+					],
+					"query": [
+						{
+							"key": "operationType",
+							"value": "WITHDRAWAL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REFUND - CANCEL",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJuLTJtdEZ1LXZpeHRoTEt3ZFlRUWdfUW53N0RYU1lTMUkway0wSEtYVFdVIn0.eyJleHAiOjE3MTc0NDAwNDcsImlhdCI6MTcxNzQzOTc0NywianRpIjoiY2RiYzdmNmQtNTZiMy00MWU3LTg5NTgtZjA4OGJkNWRkNjk5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0tFQUxNX1NQUklOR19BUEkiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjIyMTAzNzctNWI4Yy00MzZhLTg4MDEtYjk0MDk4Yjk2MWJjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQ0xJRU5UX1NQUklORyIsInNlc3Npb25fc3RhdGUiOiIxMWViZmNjMi0yN2JlLTQ5OWQtYjlhNi1iOTdhMDRhODVmYzciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiQURNSU5fUkVBRCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZWFsbV9zcHJpbmdfYXBpIiwiQURNSU5fV1JJVEUiXX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjExZWJmY2MyLTI3YmUtNDk5ZC1iOWE2LWI5N2EwNGE4NWZjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiRG93Z2xhcyBNYWlhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZG93Z2xhcyIsImdpdmVuX25hbWUiOiJEb3dnbGFzIiwiZmFtaWx5X25hbWUiOiJNYWlhIiwiZW1haWwiOiJkb3dnbGFzbWFpYUBtYWlhLmNvbSJ9.Sfi-8kg9exqwTFGXcmGwtev7pVK_84C9dSwuGlzxtwtqBL5Gdeg8Bdyws6t1TpsXx_3MG_KULOJ4U74N61KLY6eHouWHemALFX7tEBtKSfzgVjZ72_NRox3DUaxNM1nDk9Ho_Onfil9xBgyCAgwtCV7nLeBPOia00J3_uOwf-YgCds30GA2AbPdoUkyH0FPrSd5wm2EztGwguV3pdkAkw5wqsIZ68yDyxDForMMtdMz1l6sNpeBZcwHGkzeToYNHW95ZqTTEWohPZBc4zl9TqF74MW-OccRpheg70UNKeSsb-6kMdUgqtTXYnCuIMy9AkzYGB2CU9ME0TvEGMmkhjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"transaction_id\": \"2ca3c201-c36d-4a53-bb8a-a8fb1fdabb42\",\r\n \"user_id\": \"user123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/v1/wallet/credit-adjustment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"credit-adjustment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PURCHASE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJuLTJtdEZ1LXZpeHRoTEt3ZFlRUWdfUW53N0RYU1lTMUkway0wSEtYVFdVIn0.eyJleHAiOjE3MTc0NDAwNDcsImlhdCI6MTcxNzQzOTc0NywianRpIjoiY2RiYzdmNmQtNTZiMy00MWU3LTg5NTgtZjA4OGJkNWRkNjk5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0tFQUxNX1NQUklOR19BUEkiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjIyMTAzNzctNWI4Yy00MzZhLTg4MDEtYjk0MDk4Yjk2MWJjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQ0xJRU5UX1NQUklORyIsInNlc3Npb25fc3RhdGUiOiIxMWViZmNjMi0yN2JlLTQ5OWQtYjlhNi1iOTdhMDRhODVmYzciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiQURNSU5fUkVBRCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZWFsbV9zcHJpbmdfYXBpIiwiQURNSU5fV1JJVEUiXX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjExZWJmY2MyLTI3YmUtNDk5ZC1iOWE2LWI5N2EwNGE4NWZjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiRG93Z2xhcyBNYWlhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZG93Z2xhcyIsImdpdmVuX25hbWUiOiJEb3dnbGFzIiwiZmFtaWx5X25hbWUiOiJNYWlhIiwiZW1haWwiOiJkb3dnbGFzbWFpYUBtYWlhLmNvbSJ9.Sfi-8kg9exqwTFGXcmGwtev7pVK_84C9dSwuGlzxtwtqBL5Gdeg8Bdyws6t1TpsXx_3MG_KULOJ4U74N61KLY6eHouWHemALFX7tEBtKSfzgVjZ72_NRox3DUaxNM1nDk9Ho_Onfil9xBgyCAgwtCV7nLeBPOia00J3_uOwf-YgCds30GA2AbPdoUkyH0FPrSd5wm2EztGwguV3pdkAkw5wqsIZ68yDyxDForMMtdMz1l6sNpeBZcwHGkzeToYNHW95ZqTTEWohPZBc4zl9TqF74MW-OccRpheg70UNKeSsb-6kMdUgqtTXYnCuIMy9AkzYGB2CU9ME0TvEGMmkhjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": \"user123\",\r\n  \"amount\": 8000.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/v1/wallet/transaction?operationType=PURCHASE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"transaction"
+					],
+					"query": [
+						{
+							"key": "operationType",
+							"value": "PURCHASE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BALANCE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJuLTJtdEZ1LXZpeHRoTEt3ZFlRUWdfUW53N0RYU1lTMUkway0wSEtYVFdVIn0.eyJleHAiOjE3MTc0NDAwNDcsImlhdCI6MTcxNzQzOTc0NywianRpIjoiY2RiYzdmNmQtNTZiMy00MWU3LTg5NTgtZjA4OGJkNWRkNjk5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0tFQUxNX1NQUklOR19BUEkiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjIyMTAzNzctNWI4Yy00MzZhLTg4MDEtYjk0MDk4Yjk2MWJjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQ0xJRU5UX1NQUklORyIsInNlc3Npb25fc3RhdGUiOiIxMWViZmNjMi0yN2JlLTQ5OWQtYjlhNi1iOTdhMDRhODVmYzciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiQURNSU5fUkVBRCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZWFsbV9zcHJpbmdfYXBpIiwiQURNSU5fV1JJVEUiXX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjExZWJmY2MyLTI3YmUtNDk5ZC1iOWE2LWI5N2EwNGE4NWZjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiRG93Z2xhcyBNYWlhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZG93Z2xhcyIsImdpdmVuX25hbWUiOiJEb3dnbGFzIiwiZmFtaWx5X25hbWUiOiJNYWlhIiwiZW1haWwiOiJkb3dnbGFzbWFpYUBtYWlhLmNvbSJ9.Sfi-8kg9exqwTFGXcmGwtev7pVK_84C9dSwuGlzxtwtqBL5Gdeg8Bdyws6t1TpsXx_3MG_KULOJ4U74N61KLY6eHouWHemALFX7tEBtKSfzgVjZ72_NRox3DUaxNM1nDk9Ho_Onfil9xBgyCAgwtCV7nLeBPOia00J3_uOwf-YgCds30GA2AbPdoUkyH0FPrSd5wm2EztGwguV3pdkAkw5wqsIZ68yDyxDForMMtdMz1l6sNpeBZcwHGkzeToYNHW95ZqTTEWohPZBc4zl9TqF74MW-OccRpheg70UNKeSsb-6kMdUgqtTXYnCuIMy9AkzYGB2CU9ME0TvEGMmkhjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/v1/wallet/balance?user_id=user123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "user123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - STATEMENT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJuLTJtdEZ1LXZpeHRoTEt3ZFlRUWdfUW53N0RYU1lTMUkway0wSEtYVFdVIn0.eyJleHAiOjE3MTc0NDAwNDcsImlhdCI6MTcxNzQzOTc0NywianRpIjoiY2RiYzdmNmQtNTZiMy00MWU3LTg5NTgtZjA4OGJkNWRkNjk5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0tFQUxNX1NQUklOR19BUEkiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjIyMTAzNzctNWI4Yy00MzZhLTg4MDEtYjk0MDk4Yjk2MWJjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQ0xJRU5UX1NQUklORyIsInNlc3Npb25fc3RhdGUiOiIxMWViZmNjMi0yN2JlLTQ5OWQtYjlhNi1iOTdhMDRhODVmYzciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiQURNSU5fUkVBRCIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZWFsbV9zcHJpbmdfYXBpIiwiQURNSU5fV1JJVEUiXX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjExZWJmY2MyLTI3YmUtNDk5ZC1iOWE2LWI5N2EwNGE4NWZjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiRG93Z2xhcyBNYWlhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZG93Z2xhcyIsImdpdmVuX25hbWUiOiJEb3dnbGFzIiwiZmFtaWx5X25hbWUiOiJNYWlhIiwiZW1haWwiOiJkb3dnbGFzbWFpYUBtYWlhLmNvbSJ9.Sfi-8kg9exqwTFGXcmGwtev7pVK_84C9dSwuGlzxtwtqBL5Gdeg8Bdyws6t1TpsXx_3MG_KULOJ4U74N61KLY6eHouWHemALFX7tEBtKSfzgVjZ72_NRox3DUaxNM1nDk9Ho_Onfil9xBgyCAgwtCV7nLeBPOia00J3_uOwf-YgCds30GA2AbPdoUkyH0FPrSd5wm2EztGwguV3pdkAkw5wqsIZ68yDyxDForMMtdMz1l6sNpeBZcwHGkzeToYNHW95ZqTTEWohPZBc4zl9TqF74MW-OccRpheg70UNKeSsb-6kMdUgqtTXYnCuIMy9AkzYGB2CU9ME0TvEGMmkhjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/v1/wallet/statement?user_id=user123&start_date=2024-06-20&end_date=2024-06-26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"wallet",
+						"statement"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "user123"
+						},
+						{
+							"key": "start_date",
+							"value": "2024-06-20"
+						},
+						{
+							"key": "end_date",
+							"value": "2024-06-26"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
