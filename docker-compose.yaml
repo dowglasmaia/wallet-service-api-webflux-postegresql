@@ -82,6 +82,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - maianet
 
   mongo-express:
     image: mongo-express
@@ -95,6 +97,8 @@ services:
       ME_CONFIG_BASICAUTH: false
     volumes:
       - mongo_data:/data/db
+    networks:
+      - maianet
 
 
 networks:

@@ -31,4 +31,8 @@ CREATE TABLE IF NOT EXISTS refund (
 
 INSERT INTO public.account
 (id, "number", user_id, balance)
-VALUES(uuid_generate_v4(), '002', 'user123', 0);
+VALUES(uuid_generate_v4(), '001', 'user123', 0);
+
+INSERT INTO public.account
+(id, "number", user_id, balance)
+VALUES(uuid_generate_v4(), '002', 'user129', 0);

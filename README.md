@@ -118,11 +118,103 @@ O padrão **Strategy** define uma família de algoritmos, encapsula cada um dele
 - **OpenAPI**: Definição completa da API.
 - **[Collection PostMan - API](src/main/resources/collection/Wallet%20-%20Transaction%20-%20API.postman_collection.json)**: API Postman Collection
 - **[Collection PostMan - GATEWAY](src/main/resources/collection/API-GATEWAY-DOWGLAS-MAIA.postman_collection.json)**: GATEWAY Postman Collection
+- **[Repositório API Gateway](https://github.com/dowglasmaia/traefik-gateway-config)**: Traefik Gateway
+- **[Repositório API Audit](https://github.com/dowglasmaia/audit-transaction-service-sboot-mongodb)**: Audit Transaction Service API
 
  <img src="./img/swagger.jpg" alt="Flow to obtain the address" width="1280" height="620">
 
+---
+
+## 🚀 Execução e Configuração
+
+### Pré-requisitos
+- **Docker**: [Instalar Docker](https://docs.docker.com/get-docker/)
+
+**Navegue até o diretório da aplicação:**
+   Abra o terminal e vá até o diretório onde o `docker-compose.yml` da sua aplicação está localizado.
+
+ **Execute o Docker Compose:**
+   Use o comando abaixo para iniciar os containers definidos no `docker-compose.yml` da aplicação.
+
+   ```bash
+   docker-compose up
+   ```
+
+   Isso iniciará todos os serviços definidos, incluindo a aplicação e o banco de dados.
+
+#### Executar o Gateway
+
+**Navegue até o diretório do gateway:**
+   Abra um novo terminal e vá até o diretório onde o `docker-compose.yml` do gateway está localizado.
+
+**Execute o Docker Compose:**
+   Use o comando abaixo para iniciar os containers definidos no `docker-compose.yml` do gateway.
+
+   ```bash
+   docker-compose up
+   ```
+
+   Isso iniciará o gateway e quaisquer serviços auxiliares necessários para o gateway funcionar.
+
+**Execute para criar o Banco de Dados:**
+
+- Conexão com Base Dados
+```bash
+    url: jdbc:postgresql://localhost:5432/walletDB
+    username: maia
+    password: maiapw
+   ```
+
+   ```roomsql
+-- Script SQL para walletDB
+-- Criação do Banco de Dados
+CREATE DATABASE walletDB;
+
+-- Seleciona o Banco de Dados
+USE walletDB;
+
+   -- Criação de tabelas em PostgreSQL com UUID
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- Cria a tabela 'account' se não existir
+CREATE TABLE IF NOT EXISTS account (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    number VARCHAR(255),
+    user_id VARCHAR(255),
+    balance NUMERIC
+);
+
+-- Cria a tabela 'transaction' se não existir
+CREATE TABLE IF NOT EXISTS transaction (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id VARCHAR(255),
+    amount NUMERIC NOT NULL,
+    operation_type VARCHAR(100) NOT NULL,
+    date_time TIMESTAMP
+);
+
+-- Cria a tabela 'refund' se não existir
+CREATE TABLE IF NOT EXISTS refund (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id VARCHAR(255),
+    transaction_id UUID NOT NULL,
+    amount NUMERIC NOT NULL,
+    date_time TIMESTAMP,
+    FOREIGN KEY (transaction_id) REFERENCES transaction(id)
+);
+
+
+INSERT INTO public.account
+(id, "number", user_id, balance)
+VALUES(uuid_generate_v4(), '001', 'user123', 0);
+
+INSERT INTO public.account
+(id, "number", user_id, balance)
+VALUES(uuid_generate_v4(), '002', 'user129', 0);
+   ```
 
 ---
+
 
 ## 🔍 Observabilidade
 
@@ -130,8 +222,6 @@ O padrão **Strategy** define uma família de algoritmos, encapsula cada um dele
 
 - **OpenTelemetry**: Instrumentação automática para coleta de métricas.
 - **Jaeger**: Sistema de rastreamento distribuído para monitoramento de transações e desempenho.
-
-Configure o `application.yml` para adicionar rastreamento:
 
 ---
 
@@ -143,5 +233,3 @@ Configure o `application.yml` para adicionar rastreamento:
 - [Dockerfile Reference](https://docs.docker.com/reference/dockerfile)
 - [Kafka Docs](https://kafka.apache.org/documentation/)
 - [PostgreSQL Docs](https://www.postgresql.org/docs/)
-
----
