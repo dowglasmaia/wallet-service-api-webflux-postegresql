@@ -11,12 +11,15 @@ import com.dowglasmaia.wallet.service.mapper.TransactionMapper;
 import com.dowglasmaia.wallet.strategy.TransactionContext;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Log4j2
 @Service
@@ -42,7 +45,7 @@ public class CreateCreateTransactionServiceImpl implements CreateTransactionServ
 
     @Transactional
     @Override
-    public Mono<AccountEntity> create(TransactionEntity transactionEntity){
+    public Mono<AccountEntity> create(TransactionEntity transactionEntity) {
         return repository.findByUserId(transactionEntity.getUserId())
               .switchIfEmpty(Mono.error(new BusinessException("Account not found for user ID: " + transactionEntity.getUserId(), HttpStatus.NOT_FOUND)))
               .flatMap(account -> {
@@ -55,14 +58,19 @@ public class CreateCreateTransactionServiceImpl implements CreateTransactionServ
                   account.setBalance(newBalance);
 
                   return saveTransaction(account, transactionEntity.getOperationType(), transactionEntity.getAmount())
-                        .then(repository.save(account));
+                        .then(repository.save(account))
+                        .onErrorMap(OptimisticLockingFailureException.class, ex -> {
+                            return new BusinessException("Concurrent update error", HttpStatus.CONFLICT);
+                        });
               })
               .doFirst(() -> log.info("Starting create Transaction"))
               .doOnError(error -> log.error("Error during transaction creation", error));
     }
 
+
     private Mono<Void> saveTransaction(AccountEntity account, String operationType, BigDecimal amount){
         TransactionEntity transactionEntity = TransactionMapper.toTransactionEntity(account, operationType, amount);
+        transactionEntity.setDateTime(LocalDateTime.now());
 
         return transactionRepository.save(transactionEntity)
               .doOnSuccess(savedTransaction -> {

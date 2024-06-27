@@ -1,20 +1,23 @@
+# 🚀 Wallet Service API
 
-# 🚀 Wallet API
+Uma aplicação de carteira digital que permite gerenciar transações, obter extratos, consultar saldos, realizar compras e estornos. Desenvolvida utilizando um modelo reativo não-bloqueante com Java 17 e Spring WebFlux, seguindo os princípios de Clean Code e SOLID, e implementando os padrões de design Bridge e Strategy.
 
-Uma aplicação de carteira digital (Wallet) que permite gerenciar transações, obter extratos, consultar saldos, realizar compras e estornos. Desenvolvida utilizando um modelo reativo não-bloqueante com Java 17 e Spring WebFlux, seguindo os princípios de Clean Code e SOLID, e implementando os padrões de design Bridge e Strategy.
+* A programação reativa oferece uma abordagem moderna e eficiente para construir sistemas altamente responsivos, resilientes e escaláveis. No contexto do Spring WebFlux, ela permite a criação de APIs reativas que podem lidar com um grande número de requisições simultâneas, utilizando recursos de forma eficiente através de um modelo não-bloqueante e orientado a eventos.
+* Essa arquitetura é particularmente adequada para aplicativos que precisam integrar várias fontes de dados, processar grandes volumes de eventos em tempo real, ou simplesmente melhorar a capacidade de resposta de APIs sob carga alta. A capacidade de compor operações de forma declarativa e a gestão robusta de erros tornam a programação reativa uma poderosa ferramenta no desenvolvimento de serviços modernos.
 
 ---
 
 ## 📜 Sumário
 
-- [⚡ Tecnologias](#-tecnologias)
-- [📦 Estrutura do Projeto](#-estrutura-do-projeto)
-- [📑 Funcionalidades](#-funcionalidades)
-- [🔌 Padrões de Design](#-padrões-de-design)
-- [🛠️ Desenvolvimento](#️-desenvolvimento)
-- [📚 Documentação](#-documentação)
-- [🔍 Observabilidade](#-observabilidade)
-- [🌐 Referências](#-referências)
+- [⚡ Tecnologias](#⚡-tecnologias)
+- [📦 Estrutura do Projeto](#📦-estrutura-do-projeto)
+- [📑 Funcionalidades](#📑-funcionalidades)
+- [🔌 Padrões de Design](#🔌-padrões-de-design)
+- [🛠️ Desenvolvimento](#🛠️-desenvolvimento)
+- [🛠️ Transações e Controle de Concorrência](#🛠️-transações-e-controle-de-concorrência)
+- [📚 Documentação](#📚-documentação)
+- [🔍 Observabilidade](#🔍-observabilidade)
+- [🌐 Referências](#🌐-referências)
 
 ---
 
@@ -30,6 +33,17 @@ Essas são algumas das tecnologias e ferramentas utilizadas no projeto:
 ![Swagger](https://img.shields.io/badge/-Swagger-85EA2D?style=flat-square&logo=swagger&logoColor=black)
 ![Jaeger](https://img.shields.io/badge/-Jaeger-00B7FF?style=flat-square&logo=jaeger&logoColor=white)
 ![OpenTelemetry](https://img.shields.io/badge/-OpenTelemetry-CF6300?style=flat-square&logo=opentelemetry&logoColor=white)
+
+---
+
+## 📑 Funcionalidades
+
+- **Extrato de Transações**: Obtenha um extrato completo de todas as transações.
+- **Consulta de Saldo**: Consulte o saldo atual da conta.
+- **Retirada de Valor**: Realize retiradas de valor da conta.
+- **Realização de Compras**: Efetue compras, que resultam em retiradas da conta.
+- **Estorno de Compras**: Cancele compras realizadas e estorne o valor para a conta.
+- **Envio de Mensagem Assíncrona**: Após operações que resultam em persistência de dados, a API envia uma mensagem assíncrona para uma API de auditoria.
 
 ---
 
@@ -65,19 +79,21 @@ src
 ## 🚀 Desenho de Solução
 <img src="./img/API-Gateway.jpg" alt="Flow to obtain the address" width="1280" height="620">
 
+---
+
+## 📚 Documentação
+
+- **[Swagger /OpenAPI](src/main/resources/openapi/MS-WALLET.yaml)**:  Definição de contrato da API.
+- **[Collection PostMan - API](src/main/resources/collection/Wallet%20-%20Transaction%20-%20API.postman_collection.json)**: API Postman Collection
+- **[Collection PostMan - GATEWAY](src/main/resources/collection/API-GATEWAY-DOWGLAS-MAIA.postman_collection.json)**: GATEWAY Postman Collection
+- **[Repositório API Gateway](https://github.com/dowglasmaia/traefik-gateway-config)**: Traefik Gateway
+- **[Repositório API Audit](https://github.com/dowglasmaia/audit-transaction-service-sboot-mongodb)**: Audit Transaction Service API
+
+ <img src="./img/swagger.jpg" alt="Flow to obtain the address" width="1280" height="620">
 
 ---
 
-## 📑 Funcionalidades
 
-- **Extrato de Transações**: Obtenha um extrato completo de todas as transações.
-- **Consulta de Saldo**: Consulte o saldo atual da conta.
-- **Retirada de Valor**: Realize retiradas de valor da conta.
-- **Realização de Compras**: Efetue compras, que resultam em retiradas da conta.
-- **Estorno de Compras**: Cancele compras realizadas e estorne o valor para a conta.
-- **Envio de Mensagem Assíncrona**: Após operações que resultam em persistência de dados, a API envia uma mensagem assíncrona para uma API de auditoria.
-
----
 
 ## 🔌 Padrões de Design
 
@@ -112,16 +128,55 @@ O padrão **Strategy** define uma família de algoritmos, encapsula cada um dele
 
 ---
 
-## 📚 Documentação
+## 🛠️ Transações e Controle de Concorrência
 
-- **[Swagger](src/main/resources/openapi/MS-WALLET.yaml)**: Para ver os endpoints e suas descrições.
-- **OpenAPI**: Definição completa da API.
-- **[Collection PostMan - API](src/main/resources/collection/Wallet%20-%20Transaction%20-%20API.postman_collection.json)**: API Postman Collection
-- **[Collection PostMan - GATEWAY](src/main/resources/collection/API-GATEWAY-DOWGLAS-MAIA.postman_collection.json)**: GATEWAY Postman Collection
-- **[Repositório API Gateway](https://github.com/dowglasmaia/traefik-gateway-config)**: Traefik Gateway
-- **[Repositório API Audit](https://github.com/dowglasmaia/audit-transaction-service-sboot-mongodb)**: Audit Transaction Service API
+### Banco de Dados
 
- <img src="./img/swagger.jpg" alt="Flow to obtain the address" width="1280" height="620">
+Uso transacional do banco de dados para garantir atomicidade e consistência. Em operações de escrita para assegura que todas as mudanças sejam aplicadas ou nenhuma, evitando duplicação de entradas.
+
+Mecanismos de locking, como optimistic locking (com versões) para evitar modificações concorrentes.
+
+**Bloqueio Otimista**: Assume que as colisões de transação são raras. Cada transação trabalha com uma cópia da entidade, e, ao tentar salvar a entidade, verifica-se se houve alguma modificação desde que a entidade foi lida. Isso é normalmente implementado com um campo de versão. Se a versão na tentativa de salvamento não corresponder à versão atual no banco, uma exceção é lançada, indicando uma colisão.
+
+
+### Como o Código Implementa o Bloqueio Otimista
+
+1. **Uso da Anotação @Version:**
+
+```java
+@Version
+private Long version;
+```
+
+Isso indica ao Spring que o bloqueio otimista está sendo utilizado. O Spring usa esse campo para verificar se o registro no banco de dados foi alterado por outra transação durante o tempo em que a transação atual estava operando nele.
+
+2. **Tratamento de Conflito:**
+
+No método `create` do serviço `CreateTransactionServiceImpl`, o bloqueio otimista é aplicado da seguinte maneira:
+
+```java
+return saveTransaction(account, transactionEntity.getOperationType(), transactionEntity.getAmount())
+      .then(repository.save(account))
+      .onErrorMap(OptimisticLockingFailureException.class, ex -> {
+          return new BusinessException("Concurrent update error", HttpStatus.CONFLICT);
+      });
+```
+
+### Garantias e Vantagens do Bloqueio Otimista
+
+- **Evita Conflitos Silenciosos**: Garante que a operação falhe de forma explícita se ocorrer uma colisão, evitando sobreescritas não detectadas de dados.
+- **Melhor Desempenho**: Em cenários onde conflitos são raros, é mais eficiente do que o bloqueio pessimista, pois não exige o bloqueio físico dos registros no banco.
+- **Desempenho Escalável**: Funciona bem em ambientes distribuídos e sistemas de alta concorrência, porque minimiza a contenção e o uso de recursos.
+
+--- 
+
+
+## 🔍 Observabilidade
+
+### OpenTelemetry e Jaeger
+
+- **OpenTelemetry**: Instrumentação automática para coleta de métricas.
+- **Jaeger**: Sistema de rastreamento distribuído para monitoramento de transações e desempenho.
 
 ---
 
@@ -131,30 +186,30 @@ O padrão **Strategy** define uma família de algoritmos, encapsula cada um dele
 - **Docker**: [Instalar Docker](https://docs.docker.com/get-docker/)
 
 **Navegue até o diretório da aplicação:**
-   Abra o terminal e vá até o diretório onde o `docker-compose.yml` da sua aplicação está localizado.
+Abra o terminal e vá até o diretório onde o `docker-compose.yml` da sua aplicação está localizado.
 
- **Execute o Docker Compose:**
-   Use o comando abaixo para iniciar os containers definidos no `docker-compose.yml` da aplicação.
+**Execute o Docker Compose:**
+Use o comando abaixo para iniciar os containers definidos no `docker-compose.yml` da aplicação.
 
    ```bash
    docker-compose up
    ```
 
-   Isso iniciará todos os serviços definidos, incluindo a aplicação e o banco de dados.
+Isso iniciará todos os serviços definidos, incluindo a aplicação e o banco de dados.
 
 #### Executar o Gateway
 
 **Navegue até o diretório do gateway:**
-   Abra um novo terminal e vá até o diretório onde o `docker-compose.yml` do gateway está localizado.
+Abra um novo terminal e vá até o diretório onde o `docker-compose.yml` do gateway está localizado.
 
 **Execute o Docker Compose:**
-   Use o comando abaixo para iniciar os containers definidos no `docker-compose.yml` do gateway.
+Use o comando abaixo para iniciar os containers definidos no `docker-compose.yml` do gateway.
 
    ```bash
    docker-compose up
    ```
 
-   Isso iniciará o gateway e quaisquer serviços auxiliares necessários para o gateway funcionar.
+Isso iniciará o gateway e quaisquer serviços auxiliares necessários para o gateway funcionar.
 
 **Execute para criar o Banco de Dados:**
 
@@ -163,9 +218,9 @@ O padrão **Strategy** define uma família de algoritmos, encapsula cada um dele
     url: jdbc:postgresql://localhost:5432/walletDB
     username: maia
     password: maiapw
-   ```
+```
 
-   ```roomsql
+```roomsql
 -- Script SQL para walletDB
 -- Criação do Banco de Dados
 CREATE DATABASE walletDB;
@@ -211,17 +266,8 @@ VALUES(uuid_generate_v4(), '001', 'user123', 0);
 INSERT INTO public.account
 (id, "number", user_id, balance)
 VALUES(uuid_generate_v4(), '002', 'user129', 0);
-   ```
 
----
-
-
-## 🔍 Observabilidade
-
-### OpenTelemetry e Jaeger
-
-- **OpenTelemetry**: Instrumentação automática para coleta de métricas.
-- **Jaeger**: Sistema de rastreamento distribuído para monitoramento de transações e desempenho.
+```
 
 ---
 
@@ -233,3 +279,5 @@ VALUES(uuid_generate_v4(), '002', 'user129', 0);
 - [Dockerfile Reference](https://docs.docker.com/reference/dockerfile)
 - [Kafka Docs](https://kafka.apache.org/documentation/)
 - [PostgreSQL Docs](https://www.postgresql.org/docs/)
+- [Spring Webflux Concurrency](https://www.baeldung.com/spring-webflux-concurrency)
+

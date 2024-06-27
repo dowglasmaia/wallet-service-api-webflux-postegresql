@@ -31,7 +31,6 @@ public class TransactionMapper {
                         .userId(request.getUserId())
                         .operationType(operationType)
                         .amount(request.getAmount())
-                        .dateTime(LocalDateTime.now())
                         .build();
               })
               .onErrorMap(e -> new BusinessException("Invalid request data", HttpStatus.BAD_REQUEST));
