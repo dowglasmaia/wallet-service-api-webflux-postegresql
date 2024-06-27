@@ -9,15 +9,17 @@ Uma aplicação de carteira digital que permite gerenciar transações, obter ex
 
 ## 📜 Sumário
 
-- [⚡ Tecnologias](#⚡-tecnologias)
-- [📦 Estrutura do Projeto](#📦-estrutura-do-projeto)
-- [📑 Funcionalidades](#📑-funcionalidades)
-- [🔌 Padrões de Design](#🔌-padrões-de-design)
-- [🛠️ Desenvolvimento](#🛠️-desenvolvimento)
-- [🛠️ Transações e Controle de Concorrência](#🛠️-transações-e-controle-de-concorrência)
-- [📚 Documentação](#📚-documentação)
-- [🔍 Observabilidade](#🔍-observabilidade)
-- [🌐 Referências](#🌐-referências)
+- [⚡ Tecnologias](#-tecnologias)
+- [📑 Funcionalidades](#-funcionalidades)
+- [📦 Estrutura do Projeto](#-estrutura-do-projeto)
+- [🚀 Desenho de Solução](#-desenho de Solução)
+- [📚 Documentação](#-documentação)
+- [🔌 Padrões de Design](#-padrões-de-design)
+- [🛠️ Desenvolvimento](#️-desenvolvimento)
+- [🛠️ Transações e Controle de Concorrência](#️-transacoes-e-controle-de-concorrencia)
+- [🔍 Observabilidade](#-observabilidade)
+- [🚀 Execução e Configuração](#-execução-e-configuração)
+- [🌐 Referências](#-referências)
 
 ---
 
@@ -92,8 +94,6 @@ src
  <img src="./img/swagger.jpg" alt="Flow to obtain the address" width="1280" height="620">
 
 ---
-
-
 
 ## 🔌 Padrões de Design
 
