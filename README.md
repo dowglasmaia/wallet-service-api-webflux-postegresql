@@ -12,7 +12,7 @@ Uma aplicação de carteira digital que permite gerenciar transações, obter ex
 - [⚡ Tecnologias](#-tecnologias)
 - [📑 Funcionalidades](#-funcionalidades)
 - [📦 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🚀 Desenho de Solução](#-desenho de Solução)
+- [🚀 Desenho de Solução](#-desenho-de-solução)
 - [📚 Documentação](#-documentação)
 - [🔌 Padrões de Design](#-padrões-de-design)
 - [🛠️ Desenvolvimento](#️-desenvolvimento)
