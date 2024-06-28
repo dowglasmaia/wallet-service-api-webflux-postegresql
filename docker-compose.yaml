@@ -1,13 +1,22 @@
 version: '3'
 services:
   api-wallet:
-    image: dowglasmaia/wallet-service-api:v3
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
+    image: dowglasmaia/wallet-service-api:v4
     container_name: wallet-service-api
     ports:
       - "8001:8001"
     networks:
       - maianet
       - broker-kafka
+    environment:
+      - DOTEL_SERVICE_NAME=address-api
+      - DOTEL_TRACES_EXPORTER=otlp
+      - DOTEL_METRICS_EXPORTER=none
+      - DOTEL_EXPORTER_OTLP_ENDPOINT=http://collector-api:4318
+      - DOTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
 
 
   audit-service-api:
@@ -99,7 +108,27 @@ services:
       - mongo_data:/data/db
     networks:
       - maianet
+  collector-api:
+    image: otel/opentelemetry-collector:latest
+    container_name: collector-api
+    volumes:
+      - ./collector/otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    command: [ "--config=/etc/otel-collector-config.yaml" ]
+    ports:
+      - 4317:4317
+      - 4318:4318
+    networks:
+      - maianet
 
+  jaeger-api:
+    image: jaegertracing/opentelemetry-all-in-one
+    container_name: jaeger-api
+    ports:
+      - 16686:16686
+    networks:
+      - maianet
+    depends_on:
+      - collector-api
 
 networks:
   maianet:

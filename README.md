@@ -177,6 +177,7 @@ return saveTransaction(account, transactionEntity.getOperationType(), transactio
 
 - **OpenTelemetry**: Instrumentação automática para coleta de métricas.
 - **Jaeger**: Sistema de rastreamento distribuído para monitoramento de transações e desempenho.
+<img src="./img/jaeger-tr.jpg" alt="Flow to obtain the address" width="1280" height="620">
 
 ---
 
