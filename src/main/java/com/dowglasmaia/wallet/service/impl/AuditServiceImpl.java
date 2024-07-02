@@ -23,6 +23,12 @@ public class AuditServiceImpl implements AuditService {
     private final String TOPIC = "audit-transaction-topic";
 
 
+    /**
+     * Método para enviar uma mensagem de transação para o Kafka.
+     * Usa @Retryable para tentar novamente em caso de exceção de acesso a dados.
+     *
+     * @param transaction Entidade de transação a ser enviada como mensagem.
+     */
     @Retryable(
           value = {DataAccessException.class},
           maxAttempts = 3,

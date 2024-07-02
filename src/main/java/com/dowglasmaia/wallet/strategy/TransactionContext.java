@@ -32,6 +32,16 @@ public class TransactionContext {
         this.refundStrategy = refundStrategy;
     }
 
+
+    /**
+     * Método para executar a estratégia de transação com base no tipo de operação.
+     *
+     * @param operationType Tipo de operação da transação (DEPOSIT, PURCHASE, WITHDRAWAL, REFUND).
+     * @param currentBalance Saldo atual da conta.
+     * @param amount Valor da transação a ser executada.
+     * @return O novo saldo após a execução da estratégia de transação.
+     * @throws BusinessException Exceção lançada se o tipo de operação não for suportado.
+     */
     public BigDecimal executeStrategy(String operationType, BigDecimal currentBalance, BigDecimal amount){
         log.info("Start Method executeStrategy with operationType: " + operationType);
 

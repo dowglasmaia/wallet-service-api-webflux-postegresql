@@ -47,7 +47,14 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
         this.transactionRepository = transactionRepository;
     }
 
-    @Transactional
+    /**
+     * Método para processar o cancelamento e o reembolso de uma transação.
+     *
+     * @param userId ID do usuário associado à transação.
+     * @param transactionId ID da transação a ser cancelada e reembolsada.
+     * @return Um Mono<Void> indicando a conclusão do processo.
+     */
+    @Transactional // Garante que todo o método seja executado em uma transação
     @Override
     public Mono<Void> processCancellationAndRefund(String userId, String transactionId){
         return findTransactionByIdAndUser(userId, transactionId)
@@ -61,6 +68,14 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
               .then();
     }
 
+
+    /**
+     * Método para encontrar uma transação pelo ID do usuário.
+     *
+     * @param userId ID do usuário associado à transação.
+     * @param transactionId ID da transação a ser encontrada.
+     * @return Um Mono<TransactionEntity> representando a transação encontrada.
+     */
     private Mono<TransactionEntity> findTransactionByIdAndUser(String userId, String transactionId){
         return transactionRepository.findByIdAndUserId(UUID.fromString(transactionId), userId)
               .switchIfEmpty(Mono.error(new BusinessException("Transaction not found", HttpStatus.NOT_FOUND)))
@@ -69,6 +84,13 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
               .doOnSubscribe(subscription -> log.info("Validating Refund Transaction"));
     }
 
+
+    /**
+     * Método para validar uma transação de compra.
+     *
+     * @param transaction Transação a ser validada.
+     * @return Um Mono<TransactionEntity> representando a transação válida.
+     */
     private Mono<TransactionEntity> validatePurchaseTransaction(TransactionEntity transaction){
         log.info("Starting validatePurchaseTransaction");
         if (!"PURCHASE".equals(transaction.getOperationType())) {
@@ -81,12 +103,21 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
         return Mono.just(transaction);
     }
 
+    /**
+     * Método para lidar com o processo de reembolso.
+     *
+     * @param transaction Transação a ser reembolsada.
+     * @param account Conta associada à transação.
+     * @return Um Mono<Void> indicando a conclusão do processo.
+     */
     private Mono<Void> handleRefund(TransactionEntity transaction, AccountEntity account){
         return refundRepository.existsByTransactionIdAndUserId(transaction.getId(), transaction.getUserId())
               .flatMap(exists -> {
                   if (exists) {
                       String errorMessage = "Operation not performed; it has already been processed for this transaction";
                       log.error(errorMessage);
+
+                      // Lança uma exceção se o reembolso já tiver sido processado para esta transação
                       return Mono.error(new BusinessException(errorMessage, HttpStatus.UNPROCESSABLE_ENTITY));
                   } else {
                       return performRefund(transaction, account);
@@ -95,6 +126,14 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
               .doFirst(() -> log.info("Starting handleRefund"));
     }
 
+
+    /**
+     * Método para executar o reembolso de uma transação.
+     *
+     * @param transaction Transação a ser reembolsada.
+     * @param account Conta associada à transação.
+     * @return Um Mono<Void> indicando a conclusão do processo de reembolso.
+     */
     private Mono<Void> performRefund(TransactionEntity transaction, AccountEntity account){
         return Mono.defer(() -> {
             TransactionEntity refundTransaction = createRefundTransaction(transaction);
@@ -106,6 +145,7 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
 
             account.setBalance(newBalance);
 
+            // Salva a transação de reembolso, atualiza a conta e salva a entidade de reembolso
             return Mono.when(
                   transactionRepository.save(refundTransaction),
                   accountRepository.save(account),
@@ -114,6 +154,13 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
         });
     }
 
+
+    /**
+     * Método para criar uma transação de reembolso com base em uma transação original.
+     *
+     * @param transaction Transação original a ser reembolsada.
+     * @return Uma nova entidade de transação representando o reembolso.
+     */
     private TransactionEntity createRefundTransaction(TransactionEntity transaction){
         log.info("Creating refund transaction");
         return TransactionEntity.builder()
@@ -124,6 +171,13 @@ public class CreditAdjustmentTransactionServiceImpl implements CreditAdjustmentT
               .build();
     }
 
+
+    /**
+     * Método para criar uma entidade de reembolso com base em uma transação de reembolso.
+     *
+     * @param refundTransaction Transação de reembolso a ser convertida em entidade de reembolso.
+     * @return Uma nova entidade de reembolso.
+     */
     private RefundEntity createRefundEntity(TransactionEntity refundTransaction){
         log.info("Creating refund entity");
         return RefundEntity.builder()
