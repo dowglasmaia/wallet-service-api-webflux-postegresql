@@ -1,0 +1,17 @@
+{
+	"ulid": "01J367WX5TM074DM2KB8PMHAR3",
+	"minTime": 1721406952898,
+	"maxTime": 1721412000000,
+	"stats": {
+		"numSamples": 131092,
+		"numSeries": 148,
+		"numChunks": 1045
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01J367WX5TM074DM2KB8PMHAR3"
+		]
+	},
+	"version": 1
+}
