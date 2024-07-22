@@ -17,6 +17,7 @@ import java.util.List;
 import static com.dowglasmaia.wallet.mockbuilder.MockBuilder.toTransactionEntityMock;
 import static org.mockito.Mockito.when;
 
+
 public class TransactionsExtractServiceImplTest {
 
     @Mock
