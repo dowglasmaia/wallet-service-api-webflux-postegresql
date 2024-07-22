@@ -1,0 +1,42 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "grafana",
+  "signedByOrg": "grafana",
+  "signedByOrgName": "Grafana Labs",
+  "plugin": "grafana-lokiexplore-app",
+  "version": "0.1.1",
+  "time": 1721227390616,
+  "keyId": "7e4d0c6a708866e7",
+  "files": {
+    "module.js.map": "c39941fe169d932f02300cb3b21df22de343d947282d68cd1bd2789b08f815ae",
+    "da1ddf82b1124a99aaa5.wasm": "9caadfb9f78fbc43d2a7bb3f173e69abddb5e12a8f4f9f73e091b31c71289cb1",
+    "README.md": "0d770e13813574931e67eab746ebe23b2cd4412aa3caa906ded16350b65a8f50",
+    "LICENSE": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+    "img/table.png": "fe2fa65a8a761feb0a93c62231644645fb60ee06c44dda3ab16dc4e432286572",
+    "img/explore-logs-features.jpeg": "18675a62a579da52f0b1cc58796eba8896c38333de4b28f0b1e67476b6f63dd6",
+    "img/grot_err.svg": "6f535973a005418084ad6218f78f2e0e92a7a06efb7e66a05a89c35be59eb154",
+    "img/grot_err_light.svg": "eb43595481ac03b7569f9909d9e093629dfbf7001f4c95c435c53a6987397662",
+    "img/logo.svg": "11ca1cf6edec87db3a9725b071f17c93c2313d9130d31d37da3458509a8ff67b",
+    "img/patterns.png": "bf100549ec168420e9a7b6d759f492a761f964d33d45a3217ba30b9827b2bece",
+    "img/fields.png": "0b087967a82bb1a6026c35b03bfe2073b35c4da13972abf59bb9a4a404256727",
+    "module.js.LICENSE.txt": "642cead3cd09fc7a3cf47e27e2bdd040d5be595853eb18ffa7df34d2eea27ac9",
+    "plugin.json": "d956b6a846549f8a924c8e1c57ec83094a92bd431f9a247e7ec91077bc270209",
+    "module.js": "8fbb48e91c69af13e7d1f8d30b0a2989a23e4559820a4bd592e1c817c0cda57f",
+    "CHANGELOG.md": "c887bc9459584a94cef71fd80fda6e660c0a153bee4ff92850725e9d71eda15a"
+  }
+}
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.10.11
+Comment: https://openpgpjs.org
+
+wrkEARMKAAYFAmaX2H4AIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm59VKAgkBYvT8K7HfETONdeomvV5gz+4T9Rzx7ymduIUZ7JHq2MNd32K/
+jFCuhU8+3QbhXZ9j5aoAvFS1ciomL2kyJ/M/hcUCCQHJCXoTtEUzY4gPu1iR
+rnlTsbPxsN1ECKxMlvw6/j5xsjwaPYWknre8HkZWgXVQ9ZZVfosVYvLncUCY
+egRAPc6HOw==
+=xvhn
+-----END PGP SIGNATURE-----

@@ -3,10 +3,10 @@ services:
 
   ## API ##
   api-wallet:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    #image: dowglasmaia/wallet-service-api:v4
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
+    image: dowglasmaia/wallet-service-api:v5
     container_name: wallet-service-api
     ports:
       - "8001:8001"

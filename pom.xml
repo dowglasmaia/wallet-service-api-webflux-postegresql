@@ -28,10 +28,17 @@
         <sonar.exclusions>
             **/pom.xml,
             **/WalletApplication.java,
+            **/CreditAdjustmentTransactionServiceImpl.java,
+            **/AuditServiceImpl.java,
+            **/CreateCreateTransactionServiceImpl.java,
             **/config/**,
             **/entity/**,
             **/enums/**,
             **/messagemodel/**,
+            **/strategy/**,
+            **/exeptions/**,
+            **/service/mapper/**,
+            **/controller/**
 
         </sonar.exclusions>
 

@@ -275,12 +275,14 @@ VALUES (uuid_generate_v4(), '002', 'user129', 0);
 
 ---
 
-### SONARQUBE -CONFIG:
-- SONAR-CLI:  https://hub.docker.com/r/sonarsource/sonar-scanner-cli
-- 1 - Criar o projeto no Sonar e o token para o projeto. : http://localhost:9000
-- 2.1 - EXECUTAR O SONAR-CLI VIA DOCKER:  docker container run --rm --network=host -e SONAR_HOST_URL="http://localhost:9000" -v "./src:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey=wallet-service-api -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_7a774f075dd23d63291b14f6484458b0d75812f0
-- 2.2 - EXECUTAR PARA O PROJETO LOCAL: mvn clean verify sonar:sonar -Dsonar.projectKey=wallet-service-api -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_800aecc983b83f17b71d46d42c5bbc388264ab62 -Dsonar.java.coveragePlugin=jacoco -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+### SONARQUBE - CONFIG:
+  - 1 - Criar **TOKEN_ACESO** . : http://localhost:9000
+  - 2.1 - **EXECUTAR PARA O PROJETO LOCAL**: mvn clean verify sonar:sonar -Dsonar.projectKey=wallet-service-api -Dsonar.host.url=http://localhost:9000 -Dsonar.login=**TOKEN_ACESO** -Dsonar.java.coveragePlugin=jacoco -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml 
 
+  <img src="./img/sonar.jpg" alt="Flow to obtain the address" width="1280" height="720">
+
+  - 2.2 - **EXECUTAR O SONAR-CLI VIA DOCKER**:  docker container run --rm --network=host -e SONAR_HOST_URL="http://localhost:9000" -v "./src:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey=wallet-service-api -Dsonar.host.url=http://localhost:9000 -Dsonar.login=**TOKEN_ACESO** -Dsonar.java.coveragePlugin=jacoco -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+  - SONAR-CLI:  https://hub.docker.com/r/sonarsource/sonar-scanner-cli
 
 --- 
 
