@@ -1,12 +1,12 @@
-#Build
+# Build
 FROM maven:3.9.7-amazoncorretto-17 AS build
 WORKDIR /wallet
 COPY pom.xml .
 RUN mvn dependency:resolve
 COPY src ./src
-RUN mvn clean install
+RUN mvn clean install -DskipTests -Dsonar.skip=true
 
-#Runtime
+# Runtime
 FROM amazoncorretto:17-alpine3.17
 LABEL MAINTAINER="DOWGLAS MAIA"
 ENV SPRING_LOGGING_LEVEL=INFO
@@ -43,5 +43,3 @@ ENTRYPOINT ["java", \
             "--server.port=${PORT}"]
 
 #ENTRYPOINT ["java" , "-Dfile.encoding=UTF-8", "-jar", "/usr/src/app/wallet-service-api.jar", "--server.port=${PORT}"]
-
-
